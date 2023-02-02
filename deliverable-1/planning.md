@@ -6,35 +6,19 @@
  
 #### Q1: What is the product?
 
- > Short (1 - 2 min' read)
- * Start with a single sentence, high-level description of the product.
- * Be clear - Describe the problem you are solving in simple terms.
- * Specify if you have a partner and who they are.
- * Be concrete. For example:
-    * What are you planning to build? Is it a website, mobile app, browser extension, command-line app, etc.?      
-    * When describing the problem/need, give concrete examples of common use cases.
-    * Assume your the reader knows nothing about the partner or the problem domain and provide the necessary context. 
- * Focus on *what* your product does, and avoid discussing *how* you're going to implement it.      
-   For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
- * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
+Our partner, United for Literacy, previously known as Frontier College, is a national charitable organization that works with volunteers that provide tutoring, education, and reading services as well as participate in special events to accomplish the organization’s mission: to increase literacy across Canada. The product is a web application for volunteers and supervisors to communicate, book meetings, access documents/manuals, upload documents (for supervisors), exchange messages, and leave testimonials. We want to build a platform that allows volunteers and their supervisors to communicate and complete tasks such as booking hours, exchange messages about volunteer details, and ask questions about their training. 
 
 
 #### Q2: Who are your target users?
 
-  > Short (1 - 2 min' read max)
- * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
- * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
+The target users for our application are the volunteers and their respective supervisors from the United for Literacy organization. The volunteers are individuals over 16 years old that are enthusiastic, interested in new experiences, and willing to dedicate time to help others with their literacy skills. The supervisors are either experienced volunteers or staff from the United for Literacy organization who are responsible for overlooking, training, and supporting the new volunteers in the endeavors they may engage in. 
+
+Personas:
+A 20-year old university student that wants to make a difference in the community and hopes to gain more volunteer experience signs up to volunteer for United for Literacy. An available staff member that has previous volunteer experience and has been working at the organization is matched up with them. Our platform will serve as a medium for the volunteer to sign up, and for the volunteers and supervisors to communicate so they can book meetings, begin training, ask questions, and more.
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-> Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how and how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
-    * Does this application exist in another form? If so, how does your differ and provide value to the users?
-    * How does this align with your partner's organization's values/mission/mandate?
+Upon discussing the issues that the organization is facing, specifically in regards to not having a centralized location to exchange vital information between the members of United for Literacy and the decline in volunteers that is being observed, we have established features to successfully resolve these issues. Our product will help the volunteer to book and sign up for volunteer-hours easily and make it possible to access the necessary information such as training resources. We want to create user accounts and sign ups so that they are easily able to access the resources they need and book volunteer hours more consistently. Accessing the platform through an established account enables them to have consistent access to manuals, training resources, and other informative data to assist them in their volunteering experience. Volunteers will also be able to communicate with supervisors and leave testimonials about their experiences. These testimonials can be utilized in the future by the organization to either improve or promote their services to the public. This application does not currently exist, although there is a website for the United for Literacy organization, they need a platform to allow consistent communication between volunteers and supervisors. By allowing volunteers and staff members to create accounts, it would make it easier for volunteers to book recurring hours. This would also save human resources for the organization as it would take less staff to manage the onboarding and training of volunteers. It would help make the volunteer process more organized on both sides since the sign-up, booking hours, and training would all be in one area and easily accessible. This should help attract more volunteers and encourage them to return as they would have an account and be able to communicate with supervisors more easily. This would help the mission of the organization as they would be able to gain more volunteers and allow them to easily book more hours in order to help as many people as possible and make a difference in the community. 
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
@@ -129,7 +113,8 @@ I have decent experience with both, and generally don’t have a preference. See
 Team meetings will be held online on Zoom due to the differing schedules and locations of the group members. They will be recurring 2 times a week. The purpose of each meeting is to discuss the progress each member has made throughout the week and what they have worked on. Additionally, the group will talk about any future goals or tasks that need to be accomplished. We may also complete code reviews if needed. Furthermore, the dedicated partner liaisons will bring up any information or requests provided by the partner. They will ask the team if they have any questions for the partner as well so that the liaison can relay it forward. Any quick communication between group members will be facilitated through Discord or email. Our meeting schedule will be 8:30 pm on Wednesdays for a check-in meeting during the week, and we will have longer meetings on Saturdays/Sundays starting at 1 pm to discuss our tasks for the week and complete anything else we need to.
 
 Meeting 1:
-[Describe partner meeting]
+A representative from the partner explained what their organization does and what product they are hoping to build. They told us their expectations for the application, explained what has been done so far and how they are hoping to improve it. We asked some questions as well to learn more about what we are going to do and the key features they want us to focus on. We gained access to the previous Github repositories that we will be building from. We also mutually decided on a meeting schedule and discussed how we will communicate moving forward if we want to book meetings or have any further discussions.
+
   
 #### Q9: How will you organize your team?
 
