@@ -1,12 +1,49 @@
-# project-12-unitedforliteracy-t
-project-12-unitedforliteracy-t created by GitHub Classroom
+# United for Literacy Web App
+This project is a continuation of a previous student team.
 
-You should also have a readme.md file in the main folder of your repo. Readme.md will contain all the relevant information for your TA, partner or any new person to be able to run, use, and maintain your software and will evolve throughout the term. It will eventually include things like:
+## New Features Requested
+- Invite friend or colleague to volunteer function
+- Accounts for different users (staff, volunteer, admin)
+- Volunteer groups where they can communicate/message
+- Volunteers can msg supervisor (In-app messaging)
+- Integration w/ External Calendars 
+- Possible to iframe existing SF community pages or website pages? ( we can show the pages we're hoping to include on a call)
+- Integrate volunteer hour tracking
+- Integrate testimonial entry
+- Brighten UI colour scheme
 
-1. Where and how are tasks managed? (e.g., are you using Linear.app, Jira, GitHub Project...)
+# The following is an overview what the previous team has completed
+## Existing User Stories
+Home page
+- Announcement preview - group it's for, preview of content
+- Click on "View All" - take user to "Update" page
+- Assigned Programs - take user to "Programs" page
+- Community Portal - take user to salesforce login, view volunteer hours and testimonials
 
-2. How to access and use the system
+Program page
+- See all programs user is registered, divided into today and upcoming, clicking on each program card takes user to detail page of that program, including date, address, description, and shared file link to onedrive
 
-3. Key development requirements installing and running the application
+Update page
+- View all announcements for the user
+- Unread red badge disappears after reading
+- Refresh button fetches new announcements if any
 
-4. External dependencies and third-party software
+## Salesforce Integration
+Programs
+- Programs in the web app are pulled from Salesforce->Program Profiles
+- Program details directly reflect program information on Salesforce
+
+Announcements (Updates in app)
+- Data pulled from Salesforce Chatter
+- One Chatter group created for each program
+
+## Technology Overview
+Language
+- Nodejs and Typescript
+- Frontend: Nuxt framework, uses UI library Vuejs
+- Backend: tRPC - a Typescript lib
+- PostgreSQL for info not stored on Salesforce
+
+Salesforce API
+- Query Endpoint: programs, programs information, announcements, user information
+- Chatter Endpoint: chatter announcements
