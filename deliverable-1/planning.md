@@ -61,10 +61,11 @@ We had a discussion pertaining to the Intellectual Property Confidentiality Agre
 During the group meeting on Zoom, we introduced ourselves and did a few ice-breakers to get to know each other better. We talked about where everyone is from, our interests, our course load for the semester, and learned some fun facts about each other. We were unable to meet in person since we are not all in the same area, but we still got to know each other online. Other than our Zoom meeting, we also have a Discord server for communication.
 
 Fun Facts:
-We have a member in the group who is double the age of everyone else.
-There’s a member in the group named Mcgill but he goes to U of T. 
-We all come from different cultures and backgrounds but agree that soccer should be called football!
+1. We have a member in the group who is double the age of everyone else.
+2. There’s a member in the group named Mcgill but he goes to U of T. 
+3. We all come from different cultures and backgrounds but agree that soccer should be called football!
 
+![](../d1_pictures/zoom_call.PNG)
 
 #### Q7: What are the roles & responsibilities on the team?
 
@@ -121,6 +122,9 @@ A representative from the partner explained what their organization does and wha
 #### Q9: How will you organize your team?
 
 We will be using Discord to organize our team. We have created to-do lists and meeting schedules on Discord to keep track of what we need to do as well as our meeting times to make sure everyone is able to attend. We have also created sub-channels on our discord to further divide our team into specific task groups and keep our communication organized. We have a Google Drive for shared documents that everyone has access to, and we will use this to keep track of important documents, including ones we use for planning, minutes, and assignment-related work. We will prioritize tasks according to the needs of the partner as well as the capabilities of the team. Tasks will get assigned to team members based on their strengths, interests, and contributions to the team so far. The status of work will be determined through the success of different features, modules, prototypes, code that will go through several stages of review. We will ensure everyone will contribute as much as they can by discussing the work they have completed and having regular check-ins.
+
+![](../d1_pictures/discord_channel1.PNG)
+![](../d1_pictures/discord_channel2.PNG)
 
 #### Q10: What are the rules regarding how your team works?
 
