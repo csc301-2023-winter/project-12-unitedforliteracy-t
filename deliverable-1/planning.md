@@ -48,7 +48,9 @@ Upon discussing the issues that the organization is facing, specifically in rega
 
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
 
-Briefly describe which option you have agreed to.
+We had a discussion pertaining to the Intellectual Property Confidentiality Agreement with our partner. The organization decided to provide us with a level 4 approval, which is described as follows: 
+
+**“4. You will share the code under an open-source license and distribute it as you wish but only the partner can access the system deployed during the course.”**
 
 ----
 
