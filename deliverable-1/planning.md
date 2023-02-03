@@ -30,75 +30,79 @@ Upon discussing the issues that the organization is facing, specifically in rega
 
 ### User Story 1
 
-As a volunteer, I want to invite a friend so they will be able to participate in a volunteer action
+As a volunteer, I want to invite a friend, so they participate in a volunteer action
 
 #### Acceptance Criteria
 
-- Given that a volunteer is registered, when they click invite, then they can enter an email to which an invitation will be sent.
+- The volunteer's friend receives an email with a link for registration as a volunteer
+- The link sent through the email takes the person to the registration page.
 
 ### User Story 2
 
-As a supervisor, I want to have an account, so I log in to the application
+As a supervisor, I want to have an account, so I log in to the application and use all the app features provided for supervisors.
 
 #### Acceptance Criteria
 
-- Given that a supervisor leads a group of volunteers when they go to the login page, they can log in as a supervisor.
+- The supervisor can choose to sign in to the app under supervisor login.
+- The supervisor can sign in successfully with the proper credentials, then they will have access to use all the app features provided for supervisors
+- If the supervisor provided wrong credentials or missed one of the fields, an error message is displayed.
 
 ### User Story 3
 
-As a staff, I want to have an account, so I log in to the application
+As a staff member, I want to have an account, so I log in to the application and use all the app features provided for staff members.
 
 #### Acceptance Criteria
 
-- Given that a staff member works with volunteers, when they go to the login page, they can log in as a staff member.
+- The staff member can choose to sign in to the app under staff login.
+- The staff member can sign in successfully with the proper credentials then they will have access to use all the app features provided for staff members.
+- If the staff member provided wrong credentials or missed one of the fields, an error message is displayed.
 
 ### User Story 4
 
-As a group of volunteers, we want to have a chat room, so we can communicate with each other using messages
+As a volunteer, I want to be able to send and receive messages to and from other members of my group so we can communicate and collaborate work together 
 
 #### Acceptance Criteria
 
-- Given that a group of volunteers is formed when they go to their chat room, then they will be able to chat and exchange messages
+- A chat room is created for each group of volunteers.
+- Each group member can send messages in the chat room and receive all messages sent to this chat room.
+- All messages in the room are visible to all group members.
 
 ### User Story 5
 
-As a volunteer, I want to access an in-app messaging platform so I can message my supervisor directly
+As a volunteer, I want to access an in-app messaging feature so I can message my supervisor directly
 
 #### Acceptance Criteria
 
-- Given a registered volunteer, when I go to the in-app messaging, then I will be able to message my supervisor directly.
+- An in-app messaging feature is available through the app for the volunteer to send a message to their supervisor directly.
+- The supervisor gets the message successfully when the volunteer sends it.
+- Supervisors also can send messages to each one of the volunteers they supervise.
 
 ### User Story 6
 
-As a volunteer, I want to be able to integrate the app calendar with an external calendar
+As a volunteer, I want to have access to a calendar inside the app so that I can track my volunteer hours
 
 #### Acceptance Criteria
 
-- ?
+- Creating a calendar inside the app
+- The volunteer can see available volunteering hours, book volunteering hours, edit and delete.
+- Time restrictions to be imposed on modifying or deleting volunteering hours, so the volunteer can not do so less than one day before the target hour.
 
 ### User Story 7
 
-As a volunteer, I want to have access to a calendar so I can track my hours
+As an app user, I want to be able to integrate the app calendar with an external calendar so I can see events using that external calendar
 
 #### Acceptance Criteria
 
-- Given a volunteer, when they go to the app calendar, they can track their hours.
+- Each app user has access to a link that, when clicked, prompts the user to integrate the app's calendar with an external calendar of their choice
+- The app's calendar is integrated successfully with an external calendar of the user's choice and is updated continuously.
 
 ### User Story 8
 
-As a volunteer, I want to be able to have access to a blog, so I leave a testimonial entry.
+As a volunteer, I want to be able to make a testimonial entry, so I am sharing my feedback about my experience. 
 
 #### Acceptance Criteria
 
-- Given a volunteer when they go to click on “blog” they can leave a testimonial entry
-
-    
-* As a volunteer, I want to be able to easily sign up/book for volunteer hours, so that I could save time. 
-* As a volunteer, I want to be able to keep track of all my volunteer hours and informations so that 
-* As a volunteer, I want to write testimonials so that my supervisors could use them for future fund-raising events.
-* As a volunteer, I want a platform to access all of my training resources.
-* As a supervisor, I want to be able to actively manage the volunteers on a unified platform so that it’s easier to track and manage all ongoing participants and events.
-* As a supervisor, I want to be able to send messages to the volunteers to inform them of any updates and discuss event details.
+- The volunteer has access to a text editor inside the app where they can write a testimonial entry.
 
 
 ## **Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.**
