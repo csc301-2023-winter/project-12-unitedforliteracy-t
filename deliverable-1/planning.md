@@ -6,7 +6,17 @@
  
 ## **Q1: What is the product?**
 
-Our partner, United for Literacy, previously known as Frontier College, is a national charitable organization that works with volunteers that provide tutoring, education, and reading services as well as participate in special events to accomplish the organization’s mission: to increase literacy across Canada. The product is a web application for volunteers and supervisors to communicate, book meetings, access documents/manuals, upload documents (for supervisors), exchange messages, and leave testimonials. We want to build a platform that allows volunteers and their supervisors to communicate and complete tasks such as booking hours, exchange messages about volunteer details, and ask questions about their training. 
+We are planning to build on top of a web application that is integrated with United for Lliteracy existing infrastructure and serves as the primary application for United for Lliteracy volunteers and supervisors to manage and share resources.
+We are asked to add the following features:
+* enable volunteers and supervisors to communicate with eachother
+* enable volunteers to book meetings and access documents
+* enable supervisors to upload documents 
+* enable volunteers to leave testimonials
+* enable volunteers to book their hours and keep tracking of it
+* add flexibility to users by giving them the choice to integrate the app calender with an exernal calender
+
+Our partner, United for Literacy, previously known as Frontier College, is a national charitable organization that works with volunteers that provide tutoring, education, and reading services as well as participate in special events to accomplish the organization’s mission: to increase literacy across Canada. 
+
 
 
 ## **Q2: Who are your target users?**
@@ -15,7 +25,7 @@ The target users for our application are the volunteers and their respective sup
 
 Personas:
 
-A 20-year old university student that wants to make a difference in the community and hopes to gain more volunteer experience signs up to volunteer for United for Literacy. An available staff member that has previous volunteer experience and has been working at the organization is matched up with them. Our platform will serve as a medium for the volunteer to sign up, and for the volunteers and supervisors to communicate so they can book meetings, begin training, ask questions, and more.
+A volunteer that wants to make a difference in the community and hopes to gain more volunteer experience signs up to volunteer for United for Literacy. An available staff member that has previous volunteer experience and has been working at the organization is matched up with them. Our platform will serve as a medium for the volunteer to sign up, and for the volunteers and supervisors to communicate so they can book meetings, begin training, ask questions, and more.
 
 ## **Q3: Why would your users choose your product? What are they using today to solve their problem/need?**
 
@@ -35,7 +45,7 @@ Furthermore, our design choices would save the organization’s time and human r
 
 ### User Story 1
 
-As a volunteer, I want to invite a friend, so they participate in a volunteer action
+As a volunteer, I want to invite a friend, so they participate in a volunteer function
 
 #### Acceptance Criteria
 
@@ -90,7 +100,7 @@ As a volunteer, I want to have access to a calendar inside the app so that I can
 
 - Creating a calendar inside the app
 - The volunteer can see available volunteering hours, book volunteering hours, edit and delete.
-- Time restrictions to be imposed on modifying or deleting volunteering hours, so the volunteer can not do so less than one day before the target hour.
+- Time restrictions to be imposed on modifying or deleting volunteering hours, so the volunteer can not do so less than one day before the volunteer hour.
 
 ### User Story 7
 
