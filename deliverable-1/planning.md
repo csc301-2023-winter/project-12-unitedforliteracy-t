@@ -14,6 +14,7 @@ Our partner, United for Literacy, previously known as Frontier College, is a nat
 The target users for our application are the volunteers and their respective supervisors from the United for Literacy organization. The volunteers are individuals over 16 years old that are enthusiastic, interested in new experiences, and willing to dedicate time to help others with their literacy skills. The supervisors are either experienced volunteers or staff from the United for Literacy organization who are responsible for overlooking, training, and supporting the new volunteers in the endeavors they may engage in. 
 
 Personas:
+
 A 20-year old university student that wants to make a difference in the community and hopes to gain more volunteer experience signs up to volunteer for United for Literacy. An available staff member that has previous volunteer experience and has been working at the organization is matched up with them. Our platform will serve as a medium for the volunteer to sign up, and for the volunteers and supervisors to communicate so they can book meetings, begin training, ask questions, and more.
 
 ## **Q3: Why would your users choose your product? What are they using today to solve their problem/need?**
