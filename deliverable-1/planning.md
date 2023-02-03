@@ -43,16 +43,14 @@ Furthermore, our design choices would save the organization’s time and human r
 
 
 ### User Story 1
-As a volunteer, I want to invite my friends, so they can also participate in the volunteer events. (what is a volunteer function? Event, Registration …)
+As a volunteer, I want to invite my friends, so they can also participate in the volunteer events.
 
 #### Acceptance Criteria
 - The volunteer's friends receive an email with a link to volunteer registration.
 - The link sent through the email takes the person to the registration page.
  
 ### User Story 2
- As a staff member, I want to have an account, so I can log in to the application and use all the app features intended for staff members.
-( Do we have supervisors and staff members in our database?)
-( what is the difference between admin, staff, and supervisor, do we need to create an entity for each ? )
+As a staff member, I want to have an account, so I can log in to the application and use all the app features intended for staff members.
  
 #### Acceptance Criteria
 - The supervisor can choose to sign in to the app under supervisor login.
@@ -74,11 +72,12 @@ As a volunteer, I want to access an in-app messaging feature so I can message my
 - The supervisor gets the message successfully when the volunteer sends it.
 - Supervisors also can send messages to each one of the volunteers they supervise.
 
-  ###User Story 5
+### User Story 5
 As a volunteer, I want to be able to see the past events I participated in so that I can keep track of my volunteer hours. 
 #### Acceptance Criteria
 -The details of every event that the volunteer participated in will be recorded on the volunteer logs.
-- The total volunteer hours are summed and displayed on the top of the page. 
+- The total volunteer hours are summed and displayed on the top of the page.
+
 ### User Story 6
 As an app user, I want to be able to integrate the app calendar with an external calendar so I can see events using that external calendar
 #### Acceptance Criteria
@@ -89,8 +88,6 @@ As an app user, I want to be able to integrate the app calendar with an external
 As a volunteer, I want to be able to make a testimonial entry, so I can share my feedback about my experience with a specific program.
 #### Acceptance Criteria
 - The volunteer has access to a text editor inside the app where they can write a testimonial entry.
-
-
 
 ## **Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.**
 
