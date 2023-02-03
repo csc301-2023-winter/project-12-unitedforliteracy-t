@@ -33,7 +33,71 @@ Furthermore, our design choices would save the organization’s time and human r
  * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
  * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
 
- User stories:
+### User Story 1
+
+As a volunteer, I want to invite a friend so they will be able to participate in a volunteer action
+
+#### Acceptance Criteria
+
+- Given that a volunteer is registered, when they click invite, then they can enter an email to which an invitation will be sent.
+
+### User Story 2
+
+As a supervisor, I want to have an account, so I log in to the application
+
+#### Acceptance Criteria
+
+- Given that a supervisor leads a group of volunteers when they go to the login page, they can log in as a supervisor.
+
+### User Story 3
+
+As a staff, I want to have an account, so I log in to the application
+
+#### Acceptance Criteria
+
+- Given that a staff member works with volunteers, when they go to the login page, they can log in as a staff member.
+
+### User Story 4
+
+As a group of volunteers, we want to have a chat room, so we can communicate with each other using messages
+
+#### Acceptance Criteria
+
+- Given that a group of volunteers is formed when they go to their chat room, then they will be able to chat and exchange messages
+
+### User Story 5
+
+As a volunteer, I want to access an in-app messaging platform so I can message my supervisor directly
+
+#### Acceptance Criteria
+
+- Given a registered volunteer, when I go to the in-app messaging, then I will be able to message my supervisor directly.
+
+### User Story 6
+
+As a volunteer, I want to be able to integrate the app calendar with an external calendar
+
+#### Acceptance Criteria
+
+- ?
+
+### User Story 7
+
+As a volunteer, I want to have access to a calendar so I can track my hours
+
+#### Acceptance Criteria
+
+- Given a volunteer, when they go to the app calendar, they can track their hours.
+
+### User Story 8
+
+As a volunteer, I want to be able to have access to a blog, so I leave a testimonial entry.
+
+#### Acceptance Criteria
+
+- Given a volunteer when they go to click on “blog” they can leave a testimonial entry
+
+    
 * As a volunteer, I want to be able to easily sign up/book for volunteer hours, so that I could save time. 
 * As a volunteer, I want to be able to keep track of all my volunteer hours and informations so that 
 * As a volunteer, I want to write testimonials so that my supervisors could use them for future fund-raising events.
