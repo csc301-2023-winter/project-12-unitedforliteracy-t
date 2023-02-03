@@ -18,8 +18,7 @@ We are asked to add the following features:
 * Enable volunteers to book their hours and keep track of it
 * Add flexibility to users by giving them the choice to integrate the in-app calendar with an external calendar
 
-The mock-up is made with Figma. Please refer to the following link:
-https://www.figma.com/file/LqrkF5GXYYKWpur4RVIpkC/U4L?node-id=0%3A1&t=I5Bs254aH1pb1jT9-1
+The mock-up is made with Figma. Please refer to the mockup.pdf file.
 
 ## **Q2: Who are your target users?**
 
