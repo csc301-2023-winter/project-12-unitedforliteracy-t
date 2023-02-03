@@ -5,19 +5,16 @@
 # **Product Details**
  
 ## **Q1: What is the product?**
-
-We are planning to build on top of a web application that is integrated with United for Lliteracy existing infrastructure and serves as the primary application for United for Lliteracy volunteers and supervisors to manage and share resources.
-We are asked to add the following features:
-* enable volunteers and supervisors to communicate with eachother
-* enable volunteers to book meetings and access documents
-* enable supervisors to upload documents 
-* enable volunteers to leave testimonials
-* enable volunteers to book their hours and keep tracking of it
-* add flexibility to users by giving them the choice to integrate the app calender with an exernal calender
-
 Our partner, United for Literacy, previously known as Frontier College, is a national charitable organization that works with volunteers that provide tutoring, education, and reading services as well as participate in special events to accomplish the organization’s mission: to increase literacy across Canada. 
 
-
+We are planning to build on top of a web application that is integrated with United For Literacy's existing infrastructure and serves as the primary application for the organization's volunteers and supervisors to manage and share resources.
+We are asked to add the following features:
+* Enable volunteers and supervisors to communicate with each other
+* Enable volunteers to book meetings and access documents
+* Enable supervisors to upload documents or videos 
+* Enable volunteers to leave testimonials about their volunteering experiences
+* Enable volunteers to book their hours and keep track of it
+* Add flexibility to users by giving them the choice to integrate the in-app calendar with an external calendar
 
 ## **Q2: Who are your target users?**
 
