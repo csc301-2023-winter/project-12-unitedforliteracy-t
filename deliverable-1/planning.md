@@ -27,6 +27,15 @@ Upon discussing the issues that the organization is facing, specifically in rega
  * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
  * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
 
+ User stories:
+As a volunteer, I want to be able to easily sign up/book for volunteer hours, so that I could save time. 
+As a volunteer, I want to be able to keep track of all my volunteer hours and informations so that 
+As a volunteer, I want to write testimonials so that my supervisors could use them for future fund-raising events.
+As a volunteer, I want a platform to access all of my training resources.
+As a supervisor, I want to be able to actively manage the volunteers on a unified platform so that it’s easier to track and manage all ongoing participants and events.
+As a supervisor, I want to be able to send messages to the volunteers to inform them of any updates and discuss event details.
+
+
 ## **Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.**
 
 > Short (1-2 min' read max)
@@ -47,6 +56,13 @@ Upon discussing the issues that the organization is facing, specifically in rega
 5. You will only reference the work you did in your resume, interviews, etc. You agree to not share the code or software in any capacity with anyone unless your partner has agreed to it.
 
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
+
+We will be building upon previous projects and add additional features as requested from our partner. 
+
+Technology/framework/library:
+Front-end:
+Back-end:
+For the web app, we will be using Apache 2.0 as the server and Salesforce as the database. 
 
 We had a discussion pertaining to the Intellectual Property Confidentiality Agreement with our partner. The organization decided to provide us with a level 4 approval, which is described as follows: 
 
