@@ -14,6 +14,7 @@ Our partner, United for Literacy, previously known as Frontier College, is a nat
 The target users for our application are the volunteers and their respective supervisors from the United for Literacy organization. The volunteers are individuals over 16 years old that are enthusiastic, interested in new experiences, and willing to dedicate time to help others with their literacy skills. The supervisors are either experienced volunteers or staff from the United for Literacy organization who are responsible for overlooking, training, and supporting the new volunteers in the endeavors they may engage in. 
 
 Personas:
+
 A 20-year old university student that wants to make a difference in the community and hopes to gain more volunteer experience signs up to volunteer for United for Literacy. An available staff member that has previous volunteer experience and has been working at the organization is matched up with them. Our platform will serve as a medium for the volunteer to sign up, and for the volunteers and supervisors to communicate so they can book meetings, begin training, ask questions, and more.
 
 ## **Q3: Why would your users choose your product? What are they using today to solve their problem/need?**
@@ -92,12 +93,12 @@ As a volunteer, I want to be able to have access to a blog, so I leave a testimo
 - Given a volunteer when they go to click on “blog” they can leave a testimonial entry
 
     
-As a volunteer, I want to be able to easily sign up/book for volunteer hours, so that I could save time. 
-As a volunteer, I want to be able to keep track of all my volunteer hours and informations so that 
-As a volunteer, I want to write testimonials so that my supervisors could use them for future fund-raising events.
-As a volunteer, I want a platform to access all of my training resources.
-As a supervisor, I want to be able to actively manage the volunteers on a unified platform so that it’s easier to track and manage all ongoing participants and events.
-As a supervisor, I want to be able to send messages to the volunteers to inform them of any updates and discuss event details.
+* As a volunteer, I want to be able to easily sign up/book for volunteer hours, so that I could save time. 
+* As a volunteer, I want to be able to keep track of all my volunteer hours and informations so that 
+* As a volunteer, I want to write testimonials so that my supervisors could use them for future fund-raising events.
+* As a volunteer, I want a platform to access all of my training resources.
+* As a supervisor, I want to be able to actively manage the volunteers on a unified platform so that it’s easier to track and manage all ongoing participants and events.
+* As a supervisor, I want to be able to send messages to the volunteers to inform them of any updates and discuss event details.
 
 
 ## **Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.**
@@ -107,6 +108,16 @@ As a supervisor, I want to be able to send messages to the volunteers to inform 
  * How will you deploy the application?
  * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
  * Will you be using third party applications or APIs? If so, what are they?
+
+We will be building upon previous projects and add additional features as requested from our partner. 
+
+Technology/framework/library:
+
+Front-end:
+
+Back-end:
+
+For the web app, we will be using Apache 2.0 as the server and Salesforce as the database. 
 
 ----
 ## **Intellectual Property Confidentiality Agreement**
@@ -120,13 +131,6 @@ As a supervisor, I want to be able to send messages to the volunteers to inform 
 5. You will only reference the work you did in your resume, interviews, etc. You agree to not share the code or software in any capacity with anyone unless your partner has agreed to it.
 
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
-
-We will be building upon previous projects and add additional features as requested from our partner. 
-
-Technology/framework/library:
-Front-end:
-Back-end:
-For the web app, we will be using Apache 2.0 as the server and Salesforce as the database. 
 
 We had a discussion pertaining to the Intellectual Property Confidentiality Agreement with our partner. The organization decided to provide us with a level 4 approval, which is described as follows: 
 
