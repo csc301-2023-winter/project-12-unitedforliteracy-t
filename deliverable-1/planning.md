@@ -149,7 +149,7 @@ I’m interested in full-stack development so I chose to work on both front-end 
 Ibrahim Bess:
 DataBases/Backend/Product Manager
 
-I like working with databases, it feels natural to me. Also very interested in Backend programming because I enjoy setting up the core and basis of any job. I want to play the product Manager role because I want to make sure everything is going as plan (I hope I will not be too annoying :) ) 
+I like working with databases, it feels natural to me. Also very interested in Backend programming because I enjoy setting up the core and basis of any job. I want to play the product Manager role because I want to make sure everything is going as planned, I hope I will not be too annoying :) 
 
 Corinne Lee Slew: 
 Front-end: 
@@ -186,8 +186,7 @@ A representative from the partner explained what their organization does and wha
 
 We will be using Discord to organize our team. We have created to-do lists and meeting schedules on Discord to keep track of what we need to do as well as our meeting times to make sure everyone is able to attend. We have also created sub-channels on our discord to further divide our team into specific task groups and keep our communication organized. We have a Google Drive for shared documents that everyone has access to, and we will use this to keep track of important documents, including ones we use for planning, minutes, and assignment-related work. We will prioritize tasks according to the needs of the partner as well as the capabilities of the team. Tasks will get assigned to team members based on their strengths, interests, and contributions to the team so far. The status of work will be determined through the success of different features, modules, prototypes, code that will go through several stages of review. We will ensure everyone will contribute as much as they can by discussing the work they have completed and having regular check-ins.
 
-![](../d1_pictures/discord_channel1.PNG)
-![](../d1_pictures/discord_channel2.PNG)
+![](../d1_pictures/discord_channel1.PNG) ![](../d1_pictures/discord_channel2.PNG)
 
 ## **Q10: What are the rules regarding how your team works?**
 
