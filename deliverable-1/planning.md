@@ -88,6 +88,12 @@ As a volunteer, I want to be able to make a testimonial entry, so I can share my
 #### Acceptance Criteria
 - The volunteer has access to a text editor inside the app where they can write a testimonial entry.
 
+### Link to User Stories Artifact:
+https://docs.google.com/document/d/1C7tbhtbLTaNxdMnLILhqkRUODk9MRtpObQZJT0MxH5Y/edit#
+
+### Reviewal and Acceptance of User Stories by Partner:
+![Acceptance](../d1_pictures/user_story_confirm.png)
+
 ## **Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.**
 
 For our implementation, we will be building upon the existing project created by the previous team and adding additional features as requested from our partner. A notable difference in our project compared to the previous edition is that we will be switching from a mobile interface to a desktop interface.
