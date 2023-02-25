@@ -1,0 +1,450 @@
+<script lang="ts" setup>
+definePageMeta({
+  title: 'Track Hours',
+  showBack: true
+})
+</script>
+
+
+<template>
+  <div>
+
+ 
+          <TitlePage title="Track Volunteer Hours" class="title-section"/>
+          <div class="middle-section-container">
+          <div class="top-row">
+            <div class="left-col flex flex-1">
+              <div class="rounded-tl-card">
+                <div
+                  class="total-header flex flex-col justify-start items-start px-5 py-5"
+                >
+                  <div class="text-[30px] font-bold text-[#00565a]">Total</div>
+                </div>
+                <div
+                  class="total-hrs-container flex flex-col justify-center items-center"
+                >
+                  <div
+                    class="total-hrs-circle-container flex flex-col justify-center items-center"
+                  >
+                    <div id="hours-100" class="flex font-bold text-[60px]">
+                      100
+                    </div>
+                    <div class="flex font-bold">hours</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-col">
+              <div class="rounded-tl-card-right">
+                <div class="signup-form-container">
+                  <div class="text-xl font-bold text-[#00734F]">
+                    Add Volunteer Hours
+                  </div>
+                  <form class="signup-form" action="#" method="post">
+                    <div class="form-row">
+                      <label class="form-label" for="event-name"
+                        >Event name:</label
+                      >
+                      <input
+                        type="text"
+                        required
+                        name="event-name"
+                        placeholder="Summer Camp"
+                      />
+                    </div>
+                    <div class="form-row">
+                      <label class="form-label" for="date">Date</label>
+                      <input type="date" required name="date" />
+                    </div>
+                    <div class="form-row">
+                      <label class="form-label" for="time">Time</label>
+                      <input
+                        type="time"
+                        required
+                        name="time"
+                        placeholder="Time"
+                      />
+                    </div>
+
+                    <div class="form-row">
+                      <label class="form-label" for="hours-num"
+                        >Number of hours</label
+                      >
+                      <input
+                        type="number"
+                        required
+                        name="hours-num"
+                        placeholder="10"
+                      />
+                    </div>
+                    <div class="form-row">
+                      <label class="form-label" for="location">Location:</label>
+                      <input
+                        type="text"
+                        required
+                        name="location"
+                        placeholder="40 St George"
+                      />
+                    </div>
+                    <div class="form-row">
+                      <label class="form-label" for="location"
+                        >Supervisor name</label
+                      >
+                      <input
+                        type="text"
+                        required
+                        name="sup-name"
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center mt-5">
+                      <div class="button-input">
+                        <button type="submit" class="btn">Add</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-row flex flex-col">
+            <div class="table-container">
+              <table id="hours-log-table">
+                <tr>
+                  <th id="table-head" colspan="5">Volunteer Hours Log</th>
+                </tr>
+                <tr>
+                  <th>User</th>
+                  <th>Event Name</th>
+                  <th>Region</th>
+                  <th>Date</th>
+                  <th>Hours Recorded</th>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+                <tr>
+                  <td>Robert Anderson</td>
+                  <td>Summer Camp</td>
+                  <td>Toronto, ON</td>
+                  <td>2022-02-14</td>
+                  <td>10.5</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+  </div>
+</template>
+
+
+
+<style scoped>
+      .middle-section-container {
+        display: flex;
+        flex-direction: column;
+        /* background-color: lightgreen; */
+        height: 100%;
+        max-width: 1200px;
+        margin-left: 250px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .middle-section-container{
+          margin-left: 0px;
+        } 
+        .title-section {
+          padding-top:80px;
+        }
+        .table-container{
+          z-index: 0;
+          margin:1rem;
+          /* overflow-y: auto; */
+        }
+        
+      }
+
+
+      @media (max-width: 1000px) {
+        .top-row {
+          flex-wrap: wrap;
+        }
+        .table-container {
+          overflow-x: auto;
+        }
+      }
+
+
+      .rounded-tl-card {
+        color: #00565a;
+        margin: 1.5em;
+        padding: 1em;
+        background-color: #92c83e;
+        border-radius: 50px 0 0 0;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+        height: 40vh;
+        width: 100%;
+        overflow-y: hidden;
+      }
+      .rounded-tl-card-right {
+        color: #00565a;
+        margin: 1.5em;
+        padding: 1em;
+        background-color: #fff;
+        border-radius: 50px 0 0 0;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+        height: 40vh;
+        width: 100%;
+        overflow-y: auto;
+      }
+      h1 {
+        color: #00565a;
+        font-size: large;
+        font-weight: 700;
+      }
+      hr {
+        color: #00734f;
+        border: 4px solid #00734f;
+      }
+
+      .btn {
+        height: 40px;
+        width: 175px;
+        background-color: #00734f !important;
+        border-radius: 10px;
+        color: white;
+      }
+
+
+      .btn:hover {
+        opacity: 80%;
+        border-radius: 10px;
+
+      }
+
+      /*Add volunteer Hours Form*/
+      .top-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .left-col {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        /* background-color: lightblue; */
+      }
+
+      /*Total Hours*/
+      .total-hrs-circle-container {
+        height: 200px;
+        width: 200px;
+        border: 7px solid #00734f;
+        border-radius: 50%;
+      }
+
+
+
+      @media (max-width: 420px) {
+        .total-hrs-circle-container {
+          height: 150px;
+          width: 150px;
+          border: 7px solid #00734f;
+          border-radius: 50%;
+        }
+      }
+
+      .right-col {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        /* background-color: lightpink; */
+      }
+
+      .signup-form-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        max-width: 771.94px;
+        width: 100%;
+        /* background-color: #cce7f0; */
+      }
+
+      .form-label {
+        text-align: left;
+        width: 100%;
+      }
+
+      .form-row input {
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        height: 30px;
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: black;
+      }
+
+
+
+      /*tables*/
+
+      .bottom-row {
+        display: flex;
+        flex-direction: column;
+        /* background-color: lightgreen; */
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      .table-container {
+        display: flex;
+        /* background-color: lightblue; */
+        border-radius: 20px;
+        border: 1px solid lightgray;
+        overflow-x: auto;
+        overflow-y: auto;
+        max-height: 450px;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+      }
+      #hours-log-table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #hours-log-table td,
+      #hours-log-table th {
+        /* border: 1px solid #ddd; */
+        padding: 8px;
+      }
+
+      #hours-log-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #hours-log-table tr:hover {
+        background-color: #ddd;
+        cursor: pointer;
+      }
+
+      #table-head {
+        color: #00734f !important;
+        background-color: white !important;
+        top: 0;
+        position: sticky;
+      }
+
+      #hours-log-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #00734f;
+        color: white;
+        top: 0;
+        position: sticky;
+      }
+
+
+    </style>
