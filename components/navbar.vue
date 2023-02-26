@@ -27,7 +27,7 @@
             <div class="mt-10">
                 <ul>
                 <NuxtLink to="/profile2"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:account-circle" size="1.5em" class="mr-3"/>Profile></li></NuxtLink>
-                <li class="my-1 mx-2 p-3">Log out</li>
+                <NuxtLink to="/login"><li class="my-1 mx-2 p-3">Log out</li></NuxtLink>
                 </ul>
             </div>
         </nav>  
