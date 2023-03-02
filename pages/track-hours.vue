@@ -6,14 +6,9 @@ definePageMeta({
 
 const client = useClient()
 
-const contact = await(
-  await client.query('user', {
-    userId: window.localStorage.getItem("userId")// temporarily changed to another test user's id who has volunteer hours for demo purposes (contact id)
-  })
-)
 let totalHours = 0
 
-// get a list of volunteer record IDs for the user
+// get a list of volunteer record IDs for the user with contactID
   const records: String[] = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("contactId")})).record
 
   const recordHoursList: {
