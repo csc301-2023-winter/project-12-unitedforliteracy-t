@@ -103,10 +103,12 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col flex-nowrap justify-center items-center">
-    <div>
-      <div w:bg="green" class="card-wrapper" style="display: inline-block; background-color: var(--gray);">
-        <div class="heading-text today-text">Today</div>
+  <div>
+    <TitlePage title="My Programs"/>
+    <div class="grid lg:grid-cols-2 sm:grid-cols-1 md:ml-[220px] md:pl-8 md:pr-8 mt-6">
+      <div id="card1" class="card md:mr-4 mb-4 md:mb-0">                    
+        <div class="mt-4 flex flex-col">
+          <p id="card-text">Today</p>  
         <div v-if="todayEventsInfo.length == 0" class="today-text no-program-text">No programs today!</div>
         <NuxtLink v-for="event in todayEventsInfo" :key="event.id" :to="'/programs/' + event.id">
           <FCProgramCard 
@@ -118,49 +120,83 @@ definePageMeta({
           </FCProgramCard>
         </NuxtLink>
       </div>
-
-      <div class="card-wrapper">
-        <div class="heading-text">Upcoming</div>
-        <div v-if="upcomingEventsInfo.length == 0" class="no-program-text">No upcoming programs!</div>
-        <NuxtLink  v-for="event in upcomingEventsInfo" :key="event.id" :to="'/programs/' + event.id">
-          <FCProgramCard
-            style="background-color: var(--dark-green);"
-            :date="upcomingDates[event.id]"
-            :title="event.name"
-            :content="event.description"
-            contentcolor= "white"
-            datecolor="var(--light-blue)"
-          />
-        </NuxtLink>
-      </div>
     </div>
+
+    <div id="card2" class="card">
+      <div class="mt-4 flex flex-col">
+        <p id="card-text">Upcoming</p>
+          <div v-if="upcomingEventsInfo.length == 0" class="no-program-text">No upcoming programs!</div>
+          <NuxtLink  v-for="event in upcomingEventsInfo" :key="event.id" :to="'/programs/' + event.id">
+            <FCProgramCard
+              :date="upcomingDates[event.id]"
+              :title="event.name"
+              :content="event.description"
+              contentcolor= "white"
+              datecolor="var(--light-blue)"
+            />
+          </NuxtLink>
+          </div>
+    </div>
+  </div>
   </div>
 </template>
 
 <style scoped>
-.card-wrapper {
-  display: block;
-  width: fit-content;
-  min-height: 20vh;
-  border-radius: 10px;
-  margin: 10px;
-  opacity: 0.8;
-}
+    #card1{
+        color: black;
+        background-color: #175423;  
+        border-radius: 50px 0px 0px 0px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow-y: hidden;
+        max-width: 550px;
+        align-items: center;
+        padding: 1em 2em;
+      
+    }
 
-.heading-text {
-  font-size: 24px;
-  font-weight: 700;
-  margin-left: 15px;
-  margin-top: 5px;
-  color: white;
-}
-.today-text {
-  color: white;
-}
+    #card2{
+        color: black;
+        background-color: #00565a;  
+        border-radius: 50px 0px 0px 0px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow-y: hidden;
+        max-width: 550px;
+        align-items: center;
+        padding: 1em 2em;
+    }
 
-.no-program-text {
-  margin-left: 15px;
-  width: 289px;
-  color: white;
-}
+    #card3{
+        color: black;
+        background-color: #ffffff;  
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow-y: hidden;
+        width: 100%;
+        min-height: 200px;
+        height: fit-content;
+        max-width: 800px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    #card-text{
+        color: #efefef;
+        margin-top: 0px;
+        font-size: 32px;
+        font-weight: 700;
+        text-align: left;
+        float: left;
+    }
+
+    #description{
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 10px;
+    }
+
+    #identifiers{
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
 </style>

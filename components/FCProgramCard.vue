@@ -10,7 +10,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="program-card" style="background-color: var(--green);">
+    <div class="program-card">
         <div class="content">
             <div class="date-text">{{ props.date }}</div>
             <div class="title-text">{{ props.title }}</div>
@@ -25,11 +25,12 @@ const props = defineProps<{
 
 <style scoped>
 .program-card {
-    width: 289px;
+    min-width: 250px;
     height: 118px;
     border-radius: 10px;
-    margin: 15px;
+    margin: 15px 0;
     display: flex;
+    background-color: #fbfbfb;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -41,7 +42,7 @@ const props = defineProps<{
     font-size: 13px;
     font-weight: 700;
     margin-top: 5px;
-    color: v-bind(datecolor)
+    color: black
 }
 
 .title-text {
@@ -49,7 +50,7 @@ const props = defineProps<{
     line-height: 19px;
     font-weight: 700;
     text-overflow: ellipsis;
-    color: white;
+    color: black;
 }
 
 .content-text {
@@ -62,7 +63,7 @@ const props = defineProps<{
     line-height: 19px;
     padding-bottom: 10%;
     margin-top: 5px;
-    color: v-bind(contentcolor);
+    color: black;
 }
 
 .content {
@@ -72,6 +73,6 @@ const props = defineProps<{
 .card-button {
     width: 20%;
     font-size: 20px;
-    color: white;
+    color: black;
 }
 </style>

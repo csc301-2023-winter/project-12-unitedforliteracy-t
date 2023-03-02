@@ -39,7 +39,7 @@ let totalHours = 0
 
 <template>
   <div>
-          <TitlePage title="Track Volunteer Hours" class="title-section"/>
+          <TitlePage title="Track Volunteer Hours"/>
           <div class="middle-section-container">
           <div class="top-row">
             <div class="left-col flex flex-1">
@@ -182,9 +182,6 @@ let totalHours = 0
         .middle-section-container{
           margin-left: 0px;
         } 
-        .title-section {
-          padding-top:80px;
-        }
         .table-container{
           z-index: 0;
           margin:1rem;
