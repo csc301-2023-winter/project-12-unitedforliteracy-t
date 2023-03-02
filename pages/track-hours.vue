@@ -3,13 +3,47 @@ definePageMeta({
   title: 'Track Hours',
   showBack: true
 })
+
+const client = useClient()
+
+const contact = await(
+  await client.query('user', {
+    userId: window.localStorage.getItem("userId")// temporarily changed to another test user's id who has volunteer hours for demo purposes (contact id)
+  })
+)
+let totalHours = 0
+
+// get a list of volunteer record IDs for the user
+  const records: String[] = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("contactId")})).record
+
+  const recordHoursList: {
+    program: any;
+    hours: any;
+    daysAttended: any;
+    recordedDate: any;
+    notes: string
+  }[] = []
+
+  // for each volunteer record id, find the record details & add to the recordHourList
+  for (let i=0; i<records.length; i++){
+    const recordDetails = await client.query("recordDetails", {recordName: records[i]})
+    const recordinfo = {
+      program: recordDetails?.program,
+      hours: recordDetails?.hours,
+      daysAttended: recordDetails?.daysAttended,
+      recordedDate: recordDetails?.recordedDate,
+      notes: recordDetails?.notes
+    }
+    if (recordinfo.hours){
+      totalHours += recordinfo.hours;
+    }
+    recordHoursList.push(recordinfo)
+  }
 </script>
 
 
 <template>
   <div>
-
- 
           <TitlePage title="Track Volunteer Hours" class="title-section"/>
           <div class="middle-section-container">
           <div class="top-row">
@@ -27,7 +61,7 @@ definePageMeta({
                     class="total-hrs-circle-container flex flex-col justify-center items-center"
                   >
                     <div id="hours-100" class="flex font-bold text-[60px]">
-                      100
+                      {{totalHours}}
                     </div>
                     <div class="flex font-bold">hours</div>
                   </div>
@@ -115,116 +149,20 @@ definePageMeta({
                   <th id="table-head" colspan="5">Volunteer Hours Log</th>
                 </tr>
                 <tr>
-                  <th>User</th>
-                  <th>Event Name</th>
-                  <th>Region</th>
-                  <th>Date</th>
-                  <th>Hours Recorded</th>
+                  <th>Program Name</th>
+                  <th>Volunteer Hours</th>
+                  <th>Days Attended</th>
+                  <th>Recorded Date</th>
+                  <th>Notes (if any)</th>
                 </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
-                </tr>
-                <tr>
-                  <td>Robert Anderson</td>
-                  <td>Summer Camp</td>
-                  <td>Toronto, ON</td>
-                  <td>2022-02-14</td>
-                  <td>10.5</td>
+                <tr v-if="recordHoursList.length === 0"><td id="table-head" colspan="5" class="text-center">Volunteer Hours Log</td></tr>
+                
+                <tr v-for="rec in recordHoursList" :key="rec">
+                  <td>{{rec.program}}</td>
+                  <td>{{rec.hours}}</td>
+                  <td>{{rec.daysAttended}}</td>
+                  <td>{{rec.recordedDate}}</td>
+                  <td>{{rec.notes}}</td>
                 </tr>
               </table>
             </div>
@@ -353,7 +291,7 @@ definePageMeta({
 
       .right-col {
         display: flex;
-        flex: 1;
+        flex: 1.5;
         justify-content: center;
         align-items: center;
         /* background-color: lightpink; */
@@ -381,26 +319,26 @@ definePageMeta({
         border: 1px solid lightgray;
         border-radius: 4px;
         height: 30px;
-        font-size: 12px;
+        font-size: 1rem;
         padding-left: 10px;
         padding-right: 10px;
         color: black;
       }
 
-
+      .form-row{
+        margin-top: 1em;
+      }
 
       /*tables*/
 
       .bottom-row {
         display: flex;
         flex-direction: column;
-        /* background-color: lightgreen; */
         margin-top: 2rem;
         margin-bottom: 1rem;
       }
       .table-container {
         display: flex;
-        /* background-color: lightblue; */
         border-radius: 20px;
         border: 1px solid lightgray;
         overflow-x: auto;
