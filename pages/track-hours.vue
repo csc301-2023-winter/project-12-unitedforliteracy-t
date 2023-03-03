@@ -9,9 +9,9 @@ const client = useClient()
 let totalHours = 0
 
 // get a list of volunteer record IDs for the user with contactID
-  const records: String[] = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("contactId")})).record
+  const records: String[] = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")})).record
 
-  const recordHoursList: {
+  const recordHoursList: {  
     program: any;
     hours: any;
     daysAttended: any;
@@ -150,7 +150,7 @@ let totalHours = 0
                   <th>Recorded Date</th>
                   <th>Notes (if any)</th>
                 </tr>
-                <tr v-if="recordHoursList.length === 0"><td id="table-head" colspan="5" class="text-center">Volunteer Hours Log</td></tr>
+                <tr v-if="recordHoursList.length === 0"><td id="table-head" colspan="5" class="text-center">No Volunteer Hours Recorded</td></tr>
                 
                 <tr v-for="rec in recordHoursList" :key="rec">
                   <td>{{rec.program}}</td>
@@ -346,7 +346,6 @@ let totalHours = 0
 
       #hours-log-table td,
       #hours-log-table th {
-        /* border: 1px solid #ddd; */
         padding: 8px;
       }
 
@@ -354,10 +353,10 @@ let totalHours = 0
         background-color: #f2f2f2;
       }
 
-      #hours-log-table tr:hover {
+      /* #hours-log-table tr:hover {
         background-color: #ddd;
         cursor: pointer;
-      }
+      } */
 
       #table-head {
         color: #00734f !important;
