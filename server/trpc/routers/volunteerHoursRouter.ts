@@ -11,7 +11,7 @@ export const volunteerHoursRouter = createRouter().query('VolunteerHours', {
   }),
 
   async resolve({ input }) {
-    const query = `select Name from ProgPar__c WHERE OwnerId='${input.userId}'`
+    const query = `select Name from ProgPar__c WHERE Participant_Contact__c='${input.userId}'`
     const resp = await api.query(query, auth)
     const data = await resp.json() // returns a json dict of all ids of volunteer records
     if (!resp || resp.status !== 200) {
@@ -21,12 +21,16 @@ export const volunteerHoursRouter = createRouter().query('VolunteerHours', {
       })
     }
 
-    // check if data is available    
+    // if data not available return empty record    
     if (!data || !data.totalSize) {
-      throw new TRPCError({
-        code: 'NOT_FOUND',
-        message: 'Given volunteer user not found by Id = ' + input.userId
-      })
+      return {
+        userId: input.userId,
+        record: []
+      }
+      // throw new TRPCError({
+      //   code: 'NOT_FOUND',
+      //   message: 'Given volunteer user not found by Id = ' + input.userId
+      // })
     }
     else{
         const story = data.records

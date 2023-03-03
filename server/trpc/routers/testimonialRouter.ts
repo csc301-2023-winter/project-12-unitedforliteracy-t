@@ -22,10 +22,16 @@ export const testimonialRouter = createRouter().query('testimonial', {
     }
 
     if (!data || !data.totalSize || data.totalSize !== 1) {
-      throw new TRPCError({
-        code: 'NOT_FOUND',
-        message: 'Given user not found by Id = ' + input.userId
-      })
+      return{
+        ownerId: input.userId,
+        topic: "-",
+        content: "-- No testimonial written yet --",
+        date: "--/--/--"
+      }
+      // throw new TRPCError({
+      //   code: 'NOT_FOUND',
+      //   message: 'Given testimonial user not found by Id = ' + input.userId
+      // })
     }
     const story = data.records[0]
 
