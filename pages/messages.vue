@@ -255,7 +255,7 @@ export default {
 
 
 .green-box {
-  background-color: rgb(74 222 128);
+  background-color: rgb(134 239 172);
 }
 
 @media only screen and (max-width: 1272px) {
