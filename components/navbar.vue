@@ -20,7 +20,7 @@
                 <NuxtLink to=""><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:calendar-month-outline-rounded" size="1.5em" class="mr-3"/>Calendar</li></NuxtLink>
                 <NuxtLink to="/track-hours"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:more-time-rounded" size="1.5em" class="mr-3"/>Track Hours</li></NuxtLink>
                 <NuxtLink to="/notifications"><li class="my-1 mx-2 p-3 flex"><Icon name="ic:outline-notifications-none" size="1.5em" class="mr-3"/>Notifications</li></NuxtLink>
-                <NuxtLink to="/chat"><li class="my-1 mx-2 p-3 flex"><Icon name="tabler:message-circle" size="1.5em" class="mr-3"/>Messages</li></NuxtLink>
+                <NuxtLink to="/messages"><li class="my-1 mx-2 p-3 flex"><Icon name="tabler:message-circle" size="1.5em" class="mr-3"/>Messages</li></NuxtLink>
                 </ul>
             </div>
                 
