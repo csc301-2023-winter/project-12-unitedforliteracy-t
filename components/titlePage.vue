@@ -6,7 +6,7 @@
 
 
 <template>
-    <div class="title-page md:ml-[240px] ml-4 mr-4"><h1 class="font-bold text-3xl pt-4">{{ props.title }}</h1></div>
+    <div class="title-page md:ml-[240px] ml-4 mr-4"><h1 class="font-bold text-3xl pt-[80px] md:pt-4">{{ props.title }}</h1></div>
 </template>
 
 <style>

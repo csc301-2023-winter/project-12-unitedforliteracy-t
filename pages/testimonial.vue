@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TitlePage title="Testimonial"/>
+        <TitlePage title="Testimonial" class="pt-[100px] md:pt-0"/>
         <div class="rounded-card md:ml-[240px] m-6 md:p-10 p-6">
             <form>
                 <div class="mt-4 flex flex-col">
