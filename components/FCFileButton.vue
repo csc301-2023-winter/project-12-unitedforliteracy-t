@@ -20,7 +20,7 @@ button {
     width: 126px;
     height: 126px;
     position: relative;
-    background-color: var(--orange);
+    background-color: var(--white);
     font-weight: 700;
 }
 

@@ -26,15 +26,13 @@ const props = defineProps<{
 }
 
 .tag-icon {
-    font-size: 20;
+    font-size: 1rem;
     margin-right: 5px;
 }
 
 .tag-text {
-    font-size: 11px;
+    font-size: 1rem;
     font-weight: 700;
-    overflow-wrap: normal;
     width:fit-content;
-    max-width: 85%;
 }
 </style>

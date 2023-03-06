@@ -80,15 +80,15 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col flex-nowrap justify-center items-center content-container">
-    <h1>{{ eventInfo.name }}</h1>
+  <div class="flex flex-col flex-nowrap justify-center items-center content-container md:ml-[220px] md:pl-8 md:pr-8">
+    <h1 class="mt-6 pt-[80px] md:pt-6">{{ eventInfo.name }}</h1>
     <div class="event-tags-wrapper">
       <div class="tags-wrapper">
         <FCTag
           v-if="eventInfo.type == 'recurring'"
           :text="upperFirst(eventInfo.recurrence.interval)"
           icon="fe:loop"
-          color="var(--light-blue)"
+          color="var(--lime-green)"
         />
         <FCTag
           v-if="eventInfo.type == 'recurring'"
@@ -100,45 +100,46 @@ definePageMeta({
           <FCTag
             :text="eventInfo.location"
             icon="fe:location"
-            color="var(--purple)"
-            style="color: white"
+            color="var(--lime-green)"
           />
         </a>
         <FCTag
             v-else
             :text="eventInfo.location"
             icon="fe:location"
-            color="var(--purple)"
-            style="color: white"
+            color="var(--lime-green)"
           />
       </div>
 
-      <a v-if="eventInfo.fileSharing" target="_self" :href="eventInfo.fileSharing">
+      <div class="border rounded-md">
+        <a v-if="eventInfo.fileSharing" target="_self" :href="eventInfo.fileSharing">
         <FCFileButton text="Event Files" :enabled ="true"/>
-      </a>
-
-      <FCFileButton v-else text="No Event Files" :enabled="false"/>
+        </a>
+        <FCFileButton v-else text="No Event Files" :enabled="false"/>
+      </div>
+      
     </div>
 
-    <h2>Description</h2>
-    <div class="desc-text">{{ eventInfo.description }}</div>
+    <div class="rounded-tl-card md:mt-4 m-2 md:m-0">
+      <h2>Description</h2>
+      <div class="desc-text">{{ eventInfo.description }}</div>
+    </div>
+    
 
-    <!-- <h2>Staff</h2>
-    <FCStaffCard
-      name="Alice N. Chain"
-      role="Organizer"
-      color="var(--lime-green)"
-    />
-    <FCStaffCard
-      name="Campbell S. Oup"
-      role="Volunteer"
-      color="var(--light-blue)"
-    />
-    <FCStaffCard name="Joe Mama" role="Volunteer" color="var(--light-blue)" /> -->
   </div>
 </template>
 
 <style scoped>
+  .rounded-tl-card{
+        color: black;
+        padding: 1.5em;
+        background-color: #fff;
+        border-radius: 10px;
+        border: solid 1px #00000090;
+        /* box-shadow: 0 2px 8px rgb(0 0 0 / 20%); */
+        max-height: 350px;
+        overflow-y: hidden;
+  }
 .event-tags-wrapper {
   display: flex;
   width: 100%;
@@ -147,7 +148,11 @@ definePageMeta({
 }
 
 .tags-wrapper {
+  width: 50%;
   margin-right: 20px;
+  background-color: var(--lime-green);
+  border-radius: 40px 0 0 0;
+  padding: 1.5em;
 }
 
 h1 {
@@ -156,25 +161,25 @@ h1 {
   margin-left: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
+  color: black;
 }
 
 h2 {
   font-size: 20px;
   font-weight: 700;
   margin: 15px;
-  color: white;
+  color: black;
 }
 
 .desc-text {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 15px;
-  color: white;
+  color: black;
 }
 
 .content-container {
-  max-width: 25rem;
-  margin: 0 auto;
+  max-width: 800px;
+  /* margin: 0 auto; */
 }
 
 </style>
