@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  name: string
+  title: string
   text: string
 }>()
 </script>
@@ -8,12 +8,13 @@ const props = defineProps<{
 <template>
   <div class="rounded-tl-card2">
     <div class="left-section">
-      <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="" class="h-16 w-16" />
+      <img src="" alt="" class="h-16 w-16" />
     </div>
     <div class="right-section">
-      <div class="text-2xl font-bold mb-1">{{ props.name }}</div>
+      <div class="text-2xl font-bold mb-1">{{ props.title }}</div>
       <div>
-          {{ props.text}}
+          <!-- {{ props.text}} -->
+          <div class="text" v-html="text"></div>
       </div>
     </div>
   </div>
@@ -30,11 +31,20 @@ const props = defineProps<{
   background-color: #fff;
   border-radius: 25px 0 0 0;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+  width: 1000px;
+  height: 150px;
+  max-width: 1000px;
   max-height: 350px;
-  width: 100%;
-  max-width: 1200px;
-  overflow-y: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+  cursor: pointer;
 }
+
+.rounded-tl-card2:hover {
+        opacity: 70%;
+        border-radius: 10px
+      }
+
 .left-section {
   display: flex;
   justify-content: center;
@@ -49,10 +59,63 @@ const props = defineProps<{
   flex: 6;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 480px) {
+  /* 0px < screensize < 426px */
   img{
     width: 50px;
     height: 50px;
   }  
+  .rounded-tl-card2{
+    width: 350px;
+    height: 230px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
 }
+
+@media (min-width: 481px) and (max-width: 766px) {
+  /* 481px < screensize < 765px */
+  img{
+    width: 50px;
+    height: 50px;
+  }  
+  .rounded-tl-card2{
+    width: 450px;
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1050px) {
+  /* 767px < screensize < 1050px */
+  img{
+    width: 50px;
+    height: 50px;
+  }  
+  .rounded-tl-card2{
+    width: 500px;
+    height: 180px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1050px) and (max-width: 1292px) {
+  /* 481px < screensize < 765px */
+  img{
+    width: 50px;
+    height: 50px;
+  }  
+  .rounded-tl-card2{
+    width: 700px;
+    height: 180px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
+
+
 </style>
