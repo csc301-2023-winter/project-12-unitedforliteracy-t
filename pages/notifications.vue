@@ -3,6 +3,14 @@ definePageMeta({
   title: 'Notifications',
   showBack: true
 })
+
+const announcementStore = useAnnouncementStore()
+announcementStore.updateLastChecked()
+
+const refetch = async () => {
+  announcementStore.announcements = []
+  await announcementStore.fetchAnnouncements()
+}
 </script>
 
 
@@ -16,30 +24,37 @@ definePageMeta({
       <div
         class="notification-container flex flex-col justify-start items-center"
       >
-      <notificationCard name="Robert Anderson" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              impedit tenetur velit voluptate natus hic quasi iste quod maxime
-              minus?"/>
-        <notificationCard name="Patricia Seward" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              impedit tenetur velit voluptate natus hic quasi iste quod maxime
-              minus?"/>
-        <notificationCard name="Alvin Maus" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              impedit tenetur velit voluptate natus hic quasi iste quod maxime
-              minus?"/>
-        <notificationCard name="Kristen Velazquez" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              impedit tenetur velit voluptate natus hic quasi iste quod maxime
-              minus?"/>
-        <notificationCard name="Robert Anderson" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              impedit tenetur velit voluptate natus hic quasi iste quod maxime
-              minus?"/>
+        <div
+          v-for="announcement in announcementStore.announcements"
+          :key="announcement.Id"
+        >
+          <notificationCard
+            :title="announcement.Title"
+            :text="announcement.Body"
+          />
+        </div>
       </div>
+
+      <!-- <div
+      v-for="announcement in announcementStore.announcements"
+          :key="announcement.Id"
+        class="notification-container flex flex-col justify-start items-center"
+      >
+
+          <notificationCard
+            :title="announcement.Title"
+            :text="announcement.Body"
+          />
+      </div> -->
+
 
       <div
         id="button-container"
         class="flex flex-col justify-center items-center mt-10 mb-10"
       >
-        <a href="#">
-          <button class="btn">Refresh</button>
-        </a>
+        <button class="btn" @click.prevent="refetch">
+        Refresh
+        </button>
       </div>
     </div>
   </div>
@@ -66,8 +81,15 @@ definePageMeta({
       
 
       }
-      
+      @media (min-width: 769px) and (max-width: 2000px) {
 
+        #button-container{
+          margin-left: 200px;
+        }
+
+      }
+
+      
       .btn {
         height: 68px;
         width: 175px;
@@ -81,5 +103,6 @@ definePageMeta({
         border-radius: 10px;
 
       }
+
 
     </style>
