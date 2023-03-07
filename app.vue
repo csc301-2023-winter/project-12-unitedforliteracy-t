@@ -8,26 +8,6 @@ useHead({
     }
   ]
 })
-
-const announcementStore = useAnnouncementStore()
-
-await announcementStore.fetchAnnouncements()
-
-const client = useClient()
-console.log(await client.query('hello'))
-// console.log(
-//   await client.query('announcements', {
-//     userId: '003Au000005YI4mIAG',
-//     maxCount: 5,
-//     noEarlierThan: new Date('2022-11-01T11:16:01')
-//   })
-// )
-
-console.log(
-  await client.query('eventDetails', { eventId: 'a26Au00000008tdIAA' })
-)
-console.log(await client.query('userEvents', { userId: '003Au000005D9H7IAK' }))
-console.log(await client.query('user', { userId: '003Au000005YI4mIAG' }))
 </script>
 
 <template>
