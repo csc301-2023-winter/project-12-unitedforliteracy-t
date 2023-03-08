@@ -15,7 +15,7 @@
             <div class="mt-10 mb-10">
                 <ul class="list-none">
                 <NuxtLink to="/"><li class="my-1 mx-2 p-3 flex"><Icon name="ic:baseline-home" size="1.5em" class="mr-3"/>Home</li></NuxtLink>
-                <NuxtLink to="/myprograms"><li class="my-1 mx-2 p-3 flex"><Icon name="lucide:briefcase" size="1.5em" class="mr-3"/>Programs</li></NuxtLink>
+                <NuxtLink to="/programs"><li class="my-1 mx-2 p-3 flex"><Icon name="lucide:briefcase" size="1.5em" class="mr-3"/>Programs</li></NuxtLink>
                 <NuxtLink to="/resources"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:menu-book-outline-rounded" size="1.5em" class="mr-3"/>Resources</li></NuxtLink>
                 <NuxtLink to=""><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:calendar-month-outline-rounded" size="1.5em" class="mr-3"/>Calendar</li></NuxtLink>
                 <NuxtLink to="/track-hours"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:more-time-rounded" size="1.5em" class="mr-3"/>Track Hours</li></NuxtLink>
