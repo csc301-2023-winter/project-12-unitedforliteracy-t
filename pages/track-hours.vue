@@ -6,10 +6,9 @@ definePageMeta({
 
 const client = useClient()
 
-let totalHours = 0
-
 // get a list of volunteer record IDs for the user with contactID
-  const records: String[] = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")})).record
+  const rec = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")}))
+  const records: String[] = rec.record
 
   const recordHoursList: {  
     program: any;
@@ -28,9 +27,6 @@ let totalHours = 0
       daysAttended: recordDetails?.daysAttended,
       recordedDate: recordDetails?.recordedDate,
       notes: recordDetails?.notes
-    }
-    if (recordinfo.hours){
-      totalHours += recordinfo.hours;
     }
     recordHoursList.push(recordinfo)
   }
@@ -56,7 +52,7 @@ let totalHours = 0
                     class="total-hrs-circle-container flex flex-col justify-center items-center"
                   >
                     <div id="hours-100" class="flex font-bold text-[60px]">
-                      {{totalHours}}
+                      {{rec.total_hours}}
                     </div>
                     <div class="flex font-bold">hours</div>
                   </div>

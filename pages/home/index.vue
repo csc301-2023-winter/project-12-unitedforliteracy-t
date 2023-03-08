@@ -13,7 +13,9 @@ const contact = await(
   })
 )
 const name = contact.name
-const hours = contact.hours
+
+const hours = (await (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")})).total_hours)
+
 
 // Obtain the assigned program events for this user
 const events = await(
@@ -89,7 +91,7 @@ if (events.length === 0) {
         <h1>Volunteer Hours</h1>
         <div class="flex">
           Don't forget to input your volunteer hour(s) after each event to keep track of all your volunteer hours.
-          <!-- <div class="rounded-full border-6 circle flex flex-col"><div class="font-bold text-3xl">{{ hours }}</div><div>Hours</div></div> -->
+          <div class="rounded-full border-6 circle flex flex-col"><div class="font-bold text-3xl">{{ hours }}</div><div>Hours</div></div>
         </div>
       </div> 
       </NuxtLink>
