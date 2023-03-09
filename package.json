@@ -27,20 +27,26 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.4",
+    "@fullcalendar/daygrid": "^6.1.4",
+    "@fullcalendar/interaction": "^6.1.4",
+    "@fullcalendar/vue3": "^6.1.4",
     "@pinia/nuxt": "^0.4.3",
     "@prisma/client": "^4.4.0",
     "@vee-validate/zod": "^4.7.0",
     "@vueuse/core": "^9.3.0",
     "@vueuse/nuxt": "^9.3.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0",
     "nuxt-icon": "^0.1.7",
     "pinia": "^2.0.23",
     "playwright": "^1.27.1",
     "superjson": "^1.10.1",
     "trpc-nuxt": "0.3.0",
+    "vdom": "link:@fullcalendar/core/vdom",
     "vee-validate": "^4.7.0",
-    "zod": "^3.19.1",
-    "dotenv": "^16.0.3",
-    "node-fetch": "^3.3.0"
+    "vue": "^3.2.47",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
