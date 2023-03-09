@@ -60,7 +60,7 @@
                             w-[calc(100vw-50rem)]
                             overflow-scroll
                             touch-auto
-                            min-h-[25rem]
+                            min-h-[22rem]
                         "
                         >
                         <div class="text-box text-sm">
@@ -171,7 +171,7 @@ export default {
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
       min-width: 5rem;
       overflow-y: hidden;
-      margin-top: 4rem;
+      margin-top: 3rem;
       width: fit-content;
     }
 
