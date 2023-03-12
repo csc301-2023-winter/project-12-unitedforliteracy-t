@@ -56,6 +56,12 @@
     dateClick: handleDateClick,
     events: eventList.value
   };
+
+  onMounted(() => {
+  setTimeout(function () {
+    window.dispatchEvent(new Event('resize'));
+  }, 0.1);
+});
 </script>
 
 
