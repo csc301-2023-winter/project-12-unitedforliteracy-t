@@ -6,9 +6,12 @@ definePageMeta({
 
 const client = useClient()
 
-// get a list of volunteer record IDs for the user with contactID
+  // get a list of volunteer record IDs for the user with contactID
   const rec = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")}))
   const records: String[] = rec.record
+  if (!rec.total_hours){
+    rec.total_hours = 0
+  } 
 
   const recordHoursList: {  
     program: any;
@@ -32,7 +35,6 @@ const client = useClient()
   }
 </script>
 
-
 <template>
   <div>
           <TitlePage title="Track Volunteer Hours"/>
@@ -40,17 +42,19 @@ const client = useClient()
           <div class="top-row">
             <div class="left-col flex flex-1">
               <div class="rounded-tl-card">
-                <div
-                  class="total-header flex flex-col justify-start items-start px-5 py-5"
-                >
+                <div class="total-header flex flex-row px-5 py-5 justify-between">
                   <div class="text-[30px] font-bold text-[#00565a]">Total</div>
+                  <button class="flex flex-col items-center" @click="showModal = true">Achievements
+                    <img v-if="rec.total_hours && rec.total_hours >= 1  && rec.total_hours < 50" src="../assets/achievement-icons/medal.png" class="w-16">
+                    <img v-else-if="rec.total_hours && rec.total_hours < 250 " src="../assets/achievement-icons/trophy.png" >
+                    <img v-else-if="rec.total_hours && rec.total_hours < 1000 " src="../assets/achievement-icons/star.png" >
+                    <img v-else-if="rec.total_hours && rec.total_hours >= 1000" src="../assets/achievement-icons/wreath.png" >
+                  </button>
+                  <Modal v-show="showModal" :vhours=rec.total_hours @close-modal="showModal = false" />
                 </div>
-                <div
-                  class="total-hrs-container flex flex-col justify-center items-center"
-                >
-                  <div
-                    class="total-hrs-circle-container flex flex-col justify-center items-center"
-                  >
+                <div class="total-hrs-container flex flex-col justify-center items-center">
+                  
+                  <div class="total-hrs-circle-container flex flex-col justify-center items-center">
                     <div id="hours-100" class="flex font-bold text-[60px]">
                       {{rec.total_hours}}
                     </div>
@@ -162,9 +166,25 @@ const client = useClient()
   </div>
 </template>
 
+<script lang="ts">
+import Modal from '~/components/modal.vue'
+export default {
+  components: { Modal },
+  data() {
+    return {
+      showModal: false,
+      vhours: 0
+    }
 
+  },
+}
+</script>
 
 <style scoped>
+
+.achievement-img{
+  width: 80px;
+}
       .middle-section-container {
         display: flex;
         flex-direction: column;
@@ -204,7 +224,7 @@ const client = useClient()
         background-color: #92c83e;
         border-radius: 50px 0 0 0;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-        height: 40vh;
+        /* height: 40vh; */
         width: 100%;
         overflow-y: hidden;
       }
@@ -215,7 +235,7 @@ const client = useClient()
         background-color: #fff;
         border-radius: 50px 0 0 0;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-        height: 40vh;
+        height: 45vh;
         width: 100%;
         overflow-y: auto;
       }
@@ -359,6 +379,7 @@ const client = useClient()
         background-color: white !important;
         top: 0;
         position: sticky;
+        z-index: 1;
       }
 
       #hours-log-table th {
@@ -369,6 +390,7 @@ const client = useClient()
         color: white;
         top: 0;
         position: sticky;
+        z-index: 1;
       }
 
 

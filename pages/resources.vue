@@ -1,7 +1,7 @@
 <template>
     <div >
         <TitlePage title="Resourses"/>
-          <div id="content-container" class="flex flex-wrap">
+          <div id="content-container" class="flex flex-wrap lg:ml-[120px]">
             <div id="notification-container-res" class="card md:ml-[240px] m-6 md:p-10 p-6">
               <div class="rounded-tl-card2">
                 <div class="flex flex-col">
@@ -67,26 +67,14 @@
 </template>
 
 <style scoped>
-.rounded-tl-card {
-  color: #00565a;
-  margin: 1.5em;
-  padding: 1em;
-  background-color: #fff;
-  border-radius: 50px 0 0 0;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-  max-height: 350px;
-  overflow-y: hidden;
-}
-
 .rounded-tl-card2 {
   display: flex;
   flex-direction: column;
-  color: #00565a;
-  margin: 1.5em;
+  color: var(--font-black);
   margin-bottom: 0.8rem;
   padding: 1em;
   background-color: #fff;
-  border-radius: 25px 0 0 0;
+  border-radius: 10px;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
   max-height: 350px;
   width: 100%;
@@ -94,53 +82,17 @@
   overflow-y: hidden;
 }
 
-.left-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0.7;
-  padding-right: 1rem;
-}
-
-.right-section {
-  display: flex;
-  flex-direction: column;
-  flex: 6;
-}
-
 h1 {
-  color: #00565a;
+  color: var(--font-black);
   font-size: large;
   font-weight: 700;
 }
 
-hr {
-  color: #00734f;
-  border: 4px solid #00734f;
-}
-
-.heading {
-  color: #00734f;
-  font-weight: 700;
-  font-size: 38px;
-}
-
-.heading-container {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-.btn {
-  height: 68px;
-  width: 175px;
-  background-color: #00734f;
-  border-radius: 10px;
-  color: white;
-}
 #notification-container-res {
   min-height: 800px;
-  background-color: #00734f;
-  padding-left: 1rem;
-  padding-right: 4rem;
+  background-color: var(--spring-green);
+  border-radius: 60px 0 0 0;
+  padding: 3em 2.5em;
+
 }
 </style>
