@@ -12,7 +12,7 @@
             >
               <div id="calendar-card" class="overflow-hidden md:ml-[240px]">
                 <ClientOnly>
-                    <FullCalendar id="calendar" :options="calendarOptions" />
+                    <FullCalendar  id="calendar" ref="calendar" :options="calendarOptions" />
                 </ClientOnly>
               </div>
             </div>
@@ -23,31 +23,45 @@
 
 
   
-  <script setup>
+<script setup>
+  import { ref } from 'vue'
   import FullCalendar from '@fullcalendar/vue3'
   import dayGridPlugin from "@fullcalendar/daygrid";
   import interactionPlugin from "@fullcalendar/interaction";
-  
+
+  const calendar = ref(null);
+
+  const eventList = ref([
+    { title: "5pm Literacy and Basic Skills", start: "2023-03-06" },
+    { title: "5pm Literacy and Basic Skills", start: "2023-03-13" },
+    { title: "5pm Literacy and Basic Skills", start: "2023-03-20" },
+  ]);
+
+  const handleDateClick = (arg) => {
+    const eventTitle = prompt('Event Title: ');
+    if (eventTitle) {
+      const newEvent = {
+        title: eventTitle,
+        start: arg.dateStr
+      }
+      eventList.value.push(newEvent);
+
+      calendar.value.getApi().render(); // re-render the calendar with the new events
+    }
+  };
+
   const calendarOptions = {
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
-    events: [
-      { title: "5pm Literacy and Basic Skills", date: "2023-03-06" },
-      { title: "5pm Literacy and Basic Skills", date: "2023-03-13" },
-      { title: "5pm Literacy and Basic Skills", date: "2023-03-20" },
-    ],
-  //   methods: {
-  //   handleDateClick(info) {
-  //     const newEvent = {
-  //       title: 'New Event',
-  //       date: info.dateStr
-  //     }
-  //     this.events.push(newEvent)
-  //   }
-  // }
+    dateClick: handleDateClick,
+    events: eventList.value
+  };
+</script>
 
-  }
-  </script>
+
+
+
+
 
 <style>
 
