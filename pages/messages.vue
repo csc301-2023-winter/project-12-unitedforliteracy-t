@@ -1,5 +1,4 @@
 <template>
-  
     <div>
       <TitlePage title="My Messages"/>
         <body> 
@@ -84,7 +83,9 @@
                           
                             <div class="flex items-center justify-center input-box">
                                 <input
+                                
                                 id = 'message-input' 
+                                v-model="greenBoxText"
                                 class="
                                     mr-1
                                     shadow
@@ -102,9 +103,7 @@
                                 autocomplete="off"
                                 type="text"
                                 placeholder="Write a Message"
-                                v-model="greenBoxText"
                                 @keydown.enter="addGreenText"
-                                maxlength="30"
                                 >
                                 <button 
                                     class="ml-3 p-2 w-12 flex items-center justify-center"
@@ -136,7 +135,9 @@ export default {
         const parent = document.getElementById("green-texts");
         const greenText = document.createElement("div");
         greenText.classList.add("block", "bg-green-200", "p-2", "rounded-md", "my-1", "green-box");
-        greenText.innerText = this.greenBoxText;
+        // greenText.innerHTML = this.greenBoxText.replace(/(.{30})/g, "$1<br>");
+        greenText.innerHTML = this.greenBoxText.replace(/(\S{15})(?=\S)/g, "$1<br>");
+        // greenText.innerText = this.greenBoxText
         this.greenBoxText = ''
         parent.appendChild(greenText);
         document.getElementById("message-input").value = "";
@@ -246,6 +247,7 @@ export default {
 
 #green-texts {
     flex-direction: column;
+    max-width: 50%;
 
 }
 
@@ -321,14 +323,13 @@ export default {
 
   .input {
     width: 15rem;
-    /* min-width: 23rem; */
   }
 
   .input-box-container {
     min-width: 23rem;
   }
   #messages-section {
-    width: 100vw;
+    width: fit-content;
   }
 }
 
