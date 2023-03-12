@@ -12,7 +12,7 @@
             >
               <div id="calendar-card" class="overflow-hidden md:ml-[240px]">
                 <ClientOnly>
-                    <FullCalendar id="calendar" :options="calendarOptions" @dateClick="handleDateClick"  />
+                    <FullCalendar id="calendar" :options="calendarOptions" />
                 </ClientOnly>
               </div>
             </div>
@@ -36,15 +36,15 @@
       { title: "5pm Literacy and Basic Skills", date: "2023-03-13" },
       { title: "5pm Literacy and Basic Skills", date: "2023-03-20" },
     ],
-    methods: {
-    handleDateClick(info) {
-      const newEvent = {
-        title: 'New Event',
-        date: info.dateStr
-      }
-      this.events.push(newEvent)
-    }
-  }
+  //   methods: {
+  //   handleDateClick(info) {
+  //     const newEvent = {
+  //       title: 'New Event',
+  //       date: info.dateStr
+  //     }
+  //     this.events.push(newEvent)
+  //   }
+  // }
 
   }
   </script>
@@ -66,6 +66,14 @@
 
 #calendar {
     /* max-width: 75%; */
+}
+
+@media only screen and (max-width: 540px) {
+
+  #fc-dom-1 {
+    font-size: 1.4rem;
+  }
+
 }
 
 </style>
