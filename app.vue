@@ -37,5 +37,6 @@ body {
   --gray: #4d4d4d;
   --black: #2b2b2b;
   --white: #ffffff;
+  --font-black: #212427;
 }
 </style>

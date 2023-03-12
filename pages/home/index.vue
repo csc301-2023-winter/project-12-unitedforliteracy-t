@@ -4,18 +4,24 @@ definePageMeta({
   title: "Home"
 })
 
-// // const currUser = 2
+// const currUser = 2
 const client = useClient()
+let contact, name, hours
 
-const contact = await(
-  await client.query('user', {
+// window is only defined on client-side
+if (typeof window !== "undefined"){
+  contact = await client.query('user', {
     userId: window.localStorage.getItem("userId")
   })
-)
-const name = contact.name
 
-const hours = (await (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")})).total_hours)
+  name = contact.name
 
+  hours = (await (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")})).total_hours)
+  if (!hours){
+    hours = 0
+  } 
+
+}
 
 // Obtain the assigned program events for this user
 const events = await(
