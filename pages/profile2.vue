@@ -5,7 +5,7 @@ definePageMeta({
 })
 
 const client = useClient()
-let contact, name, hours, email, type, user_id
+let contact, name, hours, email, type, user_id, number
 
 if (typeof window !== "undefined"){
   contact = await client.query('user', {
@@ -16,6 +16,7 @@ if (typeof window !== "undefined"){
   email = contact.email
   type = contact.userType
   user_id = contact.userId
+  number = contact.number
 
 
 }
@@ -58,12 +59,12 @@ if (typeof window !== "undefined"){
                         <p>{{ email }}</p>
                     </div>
                 </div>
-                <!-- <div class="flex flex-col">
+                <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Phone Number:</b>
-                        <p>+1 100-100-1000</p>
+                        <p>{{ number }}</p>
                     </div>                     
-                </div> -->
+                </div>
                 <button id="edit">Edit Profile</button>
             </div>
         </div>
