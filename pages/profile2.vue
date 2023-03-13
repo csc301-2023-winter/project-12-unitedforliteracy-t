@@ -1,33 +1,68 @@
+<script lang="ts" setup>
+definePageMeta({
+  title: 'Profile',
+  showBack: true
+})
+
+const client = useClient()
+let contact, name, hours, email, type, user_id, number
+
+if (typeof window !== "undefined"){
+  contact = await client.query('user', {
+    userId: window.localStorage.getItem("userId")
+  })
+
+  name = contact.name
+  email = contact.email
+  type = contact.userType
+  user_id = contact.userId
+  number = contact.number
+
+
+}
+
+
+
+
+</script>
+
+
 <template>
     <div>
         <TitlePage title="Profile"/>
         <div class="card md:ml-[240px] m-6 md:p-10 p-6">
             <div class="container">
                 <div class="mt-4 flex flex-col">
-                    <img id="portrait" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+                    <!-- <img id="portrait" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"> -->
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Name:</b>
-                        <p>John Smith</p>
+                        <p>{{ name }}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">                      
+                        <b>User ID:</b>
+                        <p>{{ user_id }}</p>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Status:</b>
-                        <p>Volunteer</p>
+                        <p>{{ type }}</p>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Email:</b>
-                        <p>jsmith@random.com</p>
+                        <p>{{ email }}</p>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Phone Number:</b>
-                        <p>+1 100-100-1000</p>
+                        <p>{{ number }}</p>
                     </div>                     
                 </div>
                 <button id="edit">Edit Profile</button>
