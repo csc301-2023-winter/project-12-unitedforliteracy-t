@@ -7,9 +7,6 @@ const props = defineProps<{
 
 <template>
   <div class="rounded-tl-card2">
-    <div class="left-section">
-      <img src="" alt="" class="h-16 w-16" />
-    </div>
     <div class="right-section">
       <div class="text-2xl font-bold mb-1">{{ props.title }}</div>
       <div>

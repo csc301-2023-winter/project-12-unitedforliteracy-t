@@ -20,10 +20,22 @@ const refetch = async () => {
 
 <TitlePage title="Notifications" class="title-section"/>
 
+
   <div id="middle-section-container" class="flex flex-col justify-center items-center px-5">
+    
+    <div
+        id="button-container"
+        class="flex flex-row mt-20 mb-8"
+      >
+        <button class="btn" @click.prevent="refetch">
+        Refresh
+        </button>
+      </div>
+
       <div
         class="notification-container flex flex-col justify-start items-center"
       >
+
         <div
           v-for="announcement in announcementStore.announcements"
           :key="announcement.Id"
@@ -34,28 +46,7 @@ const refetch = async () => {
           />
         </div>
       </div>
-
-      <!-- <div
-      v-for="announcement in announcementStore.announcements"
-          :key="announcement.Id"
-        class="notification-container flex flex-col justify-start items-center"
-      >
-
-          <notificationCard
-            :title="announcement.Title"
-            :text="announcement.Body"
-          />
-      </div> -->
-
-
-      <div
-        id="button-container"
-        class="flex flex-col justify-center items-center mt-10 mb-10"
-      >
-        <button class="btn" @click.prevent="refetch">
-        Refresh
-        </button>
-      </div>
+      
     </div>
   </div>
 </template>
@@ -68,6 +59,13 @@ const refetch = async () => {
         padding: 1rem;
         margin-left:200px;
         /* background-color: lightblue; */
+      }
+
+      #button-container{
+        display: flex;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+        
       }
 
       @media screen and (max-width: 768px) {
