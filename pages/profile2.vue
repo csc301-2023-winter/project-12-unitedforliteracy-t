@@ -1,3 +1,31 @@
+<script lang="ts" setup>
+definePageMeta({
+  title: 'Profile',
+  showBack: true
+})
+
+const client = useClient()
+let contact, name, hours, email, type, user_id
+
+if (typeof window !== "undefined"){
+  contact = await client.query('user', {
+    userId: window.localStorage.getItem("userId")
+  })
+
+  name = contact.name
+  email = contact.email
+  type = contact.userType
+  user_id = contact.userId
+
+
+}
+
+
+
+
+</script>
+
+
 <template>
     <div>
         <TitlePage title="Profile"/>
@@ -9,27 +37,33 @@
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Name:</b>
-                        <p>John Smith</p>
+                        <p>{{ name }}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">                      
+                        <b>User ID:</b>
+                        <p>{{ user_id }}</p>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Status:</b>
-                        <p>Volunteer</p>
+                        <p>{{ type }}</p>
                     </div>
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Email:</b>
-                        <p>jsmith@random.com</p>
+                        <p>{{ email }}</p>
                     </div>
                 </div>
-                <div class="flex flex-col">
+                <!-- <div class="flex flex-col">
                     <div class="flex flex-row">                      
                         <b>Phone Number:</b>
                         <p>+1 100-100-1000</p>
                     </div>                     
-                </div>
+                </div> -->
                 <button id="edit">Edit Profile</button>
             </div>
         </div>
