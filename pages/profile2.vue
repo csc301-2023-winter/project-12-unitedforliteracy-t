@@ -33,7 +33,7 @@ if (typeof window !== "undefined"){
         <div class="card md:ml-[240px] m-6 md:p-10 p-6">
             <div class="container">
                 <div class="mt-4 flex flex-col">
-                    <img id="portrait" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80">
+                    <!-- <img id="portrait" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"> -->
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
