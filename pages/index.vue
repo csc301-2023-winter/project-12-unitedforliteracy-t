@@ -21,18 +21,18 @@ export default defineComponent({
   setup() {
     const router = useRouter()
 
-    const user1: User = { // Xing Ling
+    const user1: User = { // Admin
       userId: '003Au00000AOCYgIAP',
       contactId: '005Au000003MwDJIA0'
     }
     const user2: User = { 
-      // userId: '005Au000003MwLNIA0', // Corinne Lee Slew
+      // userId: '005Au000003MwLNIA0', // Volunteer
       // contactId: '003Au00000AXfg9IAD'
       userId: '003Au000005D9H7IAK', // test volunteer
       contactId: '005Au0000028aTNIAY'
     }
     const user3: User = {
-      userId: '003Au00000AZDxVIAX', // Chen Heng-Kuan
+      userId: '003Au00000AZDxVIAX', // Staff
       contactId: '005Au000003MwEvIAK'
     }
 
@@ -54,33 +54,30 @@ export default defineComponent({
 
 <template>
   <div class="landing-page flex flex-col flex-nowrap items-center">
-    <div class="flex justify-center mb-20"><img src="../assets/logo-white-bgd.png"></div>
-    <h1>Please select a user to log in as:</h1>
-
+    <div class="topbanner">
+      <img src="../assets/header-logo.png" class="banner-image">
+    </div>
+    <div class="content">
+    <h1 class="login-heading">Please select a user type to log in as:</h1>
     <div class="user-options">
       <NuxtLink to="/home">
         <div class="user-option" @click="loginAsUser(user1)">
-          <h2>Xing Ling</h2>
-          <p>UserID: {{ user1.userId }}</p>
-          <p>ContactID: {{ user1.contactId }}</p>
+          <h2>Admin</h2>
         </div>
       </NuxtLink>
       <NuxtLink to="/home">
         <div class="user-option ml-2 mr-2" @click="loginAsUser(user2)">
-          <h2>Test Volunteer</h2>
-          <p>UserID: {{ user2.userId }}</p>
-          <p>ContactID: {{ user2.contactId }}</p>
+          <h2>Volunteer</h2>
         </div>
       </NuxtLink>
       <NuxtLink to="/home">
         <div class="user-option" @click="loginAsUser(user3)">
-          <h2>Heng-Kuan Chen</h2>
-          <p>UserID: {{ user3.userId }}</p>
-          <p>ContactID: {{ user3.contactId }}</p>
+          <h2>Staff</h2>
         </div>
       </NuxtLink>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>
@@ -95,15 +92,16 @@ export default defineComponent({
 .user-options {
   display: flex;
   justify-content: space-between;
-  width: 80%;
   margin-top: 50px;
+  text-align: center;
 }
 
 .user-option {
-  background-color: var(--gray);
+  background-color: #91c73e;
   color: white;
   padding: 20px;
   border-radius: 5px;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -113,11 +111,44 @@ export default defineComponent({
 }
 
 .user-option h2 {
+  font-size: 30px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .user-option p {
-  margin: 0;
+  margin: 10px;
   font-size: 14px;
+  text-align: center;
 }
+
+.topbanner {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  width: 100%;
+  background-color: #0d324d; 
+  display: flex;
+  align-items: center; 
+  padding: 10px;
+}
+
+.banner-image {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.content {
+  margin-top: 300px;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-heading {
+  font-size: 28px;
+  text-align: center;
+}
+
 </style>
