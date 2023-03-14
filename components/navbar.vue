@@ -14,7 +14,7 @@
             <NuxtLink to="/"><img src="../assets/header-logo.png" alt="logo" class="w-10/12 mt-6"></NuxtLink>
             <div class="mt-10 mb-10">
                 <ul class="list-none">
-                <NuxtLink to="/"><li class="my-1 mx-2 p-3 flex"><Icon name="ic:baseline-home" size="1.5em" class="mr-3"/>Home</li></NuxtLink>
+                <NuxtLink to="/home/"><li class="my-1 mx-2 p-3 flex"><Icon name="ic:baseline-home" size="1.5em" class="mr-3"/>Home</li></NuxtLink>
                 <NuxtLink to="/programs"><li class="my-1 mx-2 p-3 flex"><Icon name="lucide:briefcase" size="1.5em" class="mr-3"/>Programs</li></NuxtLink>
                 <NuxtLink to="/resources"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:menu-book-outline-rounded" size="1.5em" class="mr-3"/>Resources</li></NuxtLink>
                 <NuxtLink to="/calendar"><li class="my-1 mx-2 p-3 flex"><Icon name="material-symbols:calendar-month-outline-rounded" size="1.5em" class="mr-3"/>Calendar</li></NuxtLink>
