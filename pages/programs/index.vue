@@ -145,7 +145,7 @@ definePageMeta({
     #card1{
         color: black;
         background-color: #175423;  
-        border-radius: 50px 0px 0px 0px;
+        border-radius: 25px 25px 25px 25px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         overflow-y: hidden;
         max-width: 550px;
@@ -157,7 +157,7 @@ definePageMeta({
     #card2{
         color: black;
         background-color: #00565a;  
-        border-radius: 50px 0px 0px 0px;
+        border-radius: 25px 25px 25px 25px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         overflow-y: hidden;
         max-width: 550px;

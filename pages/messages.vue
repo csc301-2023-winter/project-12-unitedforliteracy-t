@@ -106,7 +106,7 @@
                                 @keydown.enter="addGreenText"
                                 >
                                 <button 
-                                    class="ml-3 p-2 w-12 flex items-center justify-center"
+                                    id="sendbtn" class="ml-3 p-2 w-12 flex items-center justify-center" 
                                     @click="addGreenText"
                                 >
                                     Send
@@ -168,7 +168,7 @@ export default {
       margin-bottom: 0.8rem;
       padding: 1em;
       background-color: #fff;
-      border-radius: 25px 0 0 0;
+      border-radius: 15px 15px 15px 15px;
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
       min-width: 5rem;
       overflow-y: hidden;
@@ -258,6 +258,11 @@ export default {
 
 .green-box {
   background-color: rgb(134 239 172);
+}
+
+#sendbtn:hover{
+  background-color: rgb(134, 239, 172);
+  border-radius: 3px 3px 3px 3px;
 }
 
 @media only screen and (max-width: 1272px) {

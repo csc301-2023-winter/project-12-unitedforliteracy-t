@@ -220,11 +220,11 @@ export default {
       .rounded-tl-card {
         color: #00565a;
         margin: 1.5em;
-        padding: 1em;
+        padding: 2.2em;
         background-color: #92c83e;
-        border-radius: 50px 0 0 0;
+        border-radius: 8px 8px 8px 8px;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-        /* height: 40vh; */
+        height: 45vh;
         width: 100%;
         overflow-y: hidden;
       }
@@ -233,7 +233,7 @@ export default {
         margin: 1.5em;
         padding: 1em;
         background-color: #fff;
-        border-radius: 50px 0 0 0;
+        border-radius: 10px 10px 10px 10px;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         height: 45vh;
         width: 100%;
