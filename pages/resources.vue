@@ -91,7 +91,7 @@ h1 {
 #notification-container-res {
   min-height: 800px;
   background-color: var(--spring-green);
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 60px 0 0 0;
   padding: 3em 2.5em;
 
 }

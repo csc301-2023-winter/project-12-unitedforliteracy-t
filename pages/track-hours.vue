@@ -222,7 +222,7 @@ export default {
         margin: 1.5em;
         padding: 2.2em;
         background-color: #92c83e;
-        border-radius: 8px 8px 8px 8px;
+        border-radius: 50px 0 0 0;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         height: 45vh;
         width: 100%;
@@ -233,7 +233,7 @@ export default {
         margin: 1.5em;
         padding: 1em;
         background-color: #fff;
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 50px 0 0 0;
         box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
         height: 45vh;
         width: 100%;

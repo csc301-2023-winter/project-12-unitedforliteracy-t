@@ -168,7 +168,7 @@ export default {
       margin-bottom: 0.8rem;
       padding: 1em;
       background-color: #fff;
-      border-radius: 15px 15px 15px 15px;
+      border-radius: 25px 0 0 0;
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
       min-width: 5rem;
       overflow-y: hidden;

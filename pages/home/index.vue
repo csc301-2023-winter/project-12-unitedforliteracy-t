@@ -122,7 +122,7 @@ if (events.length === 0) {
         margin: 1.5em;
         padding: 2em;
         background-color: #fff;
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 50px 0 0 0;
         box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
         max-height: 350px;
         overflow-y: hidden;
