@@ -100,7 +100,7 @@ export class SFAPI {
       console.error((response as Response).status)
       errorAttempts = 3
     }
-    console.log("response in sf", response.status)
+    console.log("response in sf", response.status, response)
     return response as Response
   }
   
