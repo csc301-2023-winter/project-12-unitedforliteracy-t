@@ -1,8 +1,32 @@
 <script lang="ts" setup="">
+import { ref } from 'vue';
 definePageMeta({
   title: 'Track Hours',
   showBack: true
 })
+
+const hours_num = ref(0);
+const days_attended = ref(0);
+const date_entered = ref(new Date().toISOString().slice(0, 10)); // format as YYYY-MM-DD
+const notes = ref('');
+
+const submit = async () => {
+      const client = useClient();
+      if (typeof window !== "undefined"){
+        let user = window.localStorage.getItem('userId')
+        await client.mutation('createRecord', {
+        userID: user,
+        programID: 'a26Au00000008tdIAA',
+        hours: hours_num.value,
+        days: days_attended.value,
+        date: date_entered.value,
+        notes: notes.value,
+})
+
+      }
+      
+
+}
 
 const client = useClient()
 
@@ -204,29 +228,9 @@ export default {
     return {
       showModal: false,
       vhours: 0,
-      days_attended: 0, 
-      date_entered: '',
-      hours_num: 0, 
-      notes: '',
-      program: '',
-      user:''
-
     }
 
   },
-  methods: {
-    async submit() {
-      const client = useClient()
-      await client.mutation('createRecord', {
-        userID: '003Au000005D9H7IAK',
-        programID: 'a26Au00000008tdIAA',
-        hours: this.hours_num,
-        days: this.days_attended,
-        date: (new Date(this.date_entered)).toISOString(),
-        notes: this.notes
-      });
-    }
-  }
 }
 </script>
 
