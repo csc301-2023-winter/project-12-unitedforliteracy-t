@@ -4,9 +4,10 @@ import { eventDetailsRouter } from './routers/eventDetailsRouter'
 import { announcementsRouter } from './routers/announcementsRouter'
 import { userEventsRouter } from './routers/userEventsRouter'
 import { userRouter } from './routers/userRouter'
-import { testimonialRouter } from './routers/testimonialRouter'
+import { createTestimonialRouter } from './routers/testimonialRouter'
 import { volunteerHoursRouter } from './routers/volunteerHoursRouter'
 import { hoursDetailsRouter } from './routers/hoursDetailsRouter'
+import { createRecordRouter } from './routers/inputHoursRouter'
 
 export const router = createRootRouter()
   .merge(helloRouter)
@@ -14,6 +15,7 @@ export const router = createRootRouter()
   .merge(announcementsRouter)
   .merge(userEventsRouter)
   .merge(userRouter)
-  .merge(testimonialRouter)
+  .merge(createTestimonialRouter)
   .merge(volunteerHoursRouter)
   .merge(hoursDetailsRouter)
+  .merge(createRecordRouter)

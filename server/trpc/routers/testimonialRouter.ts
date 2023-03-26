@@ -2,9 +2,47 @@ import { z } from 'zod'
 import { auth, api } from '../salesforce'
 import { createRouter, TRPCError } from '../createRouter'
 
+
+export const createTestimonialRouter = createRouter().mutation('createTestimonial', {
+  input: z.object({
+    userID: z.string(),
+    programID: z.string(),
+    role: z.string(),
+    otherRole: z.string(),
+    topics: z.string(),
+    story: z.string(),
+    date: z.string()
+  }),
+  async resolve({ input }) {
+    const { userID, programID, role, otherRole,topics, story, date } = input
+
+    const fields = {
+      CreatedbyId: userID,
+      OwnerId: userID,
+      Program_Offering__c: programID,
+      Topics__c: topics,
+      Source__c: role,
+      Other_Source__c: otherRole,
+      Long_Story__c: story,
+      Date_Recorded__c: date
+    }
+    const Resp = await api.createRecord('Testimonial__c', fields, auth)
+    const response = await Resp.json()
+
+    console.log("response",response.status)
+    if (!response || response.status !== 201 || response.status !== 200) {
+      console.log('Failed to create record')
+      
+    }
+  },
+})
+
+
+
+
 /**
  * Return a testimonial, identified by its ownerId (User Id in Salesforce).
- */
+
 export const testimonialRouter = createRouter().query('testimonial', {
   input: z.object({
     userId: z.string()
@@ -43,3 +81,4 @@ export const testimonialRouter = createRouter().query('testimonial', {
     }
   }
 })
+ */

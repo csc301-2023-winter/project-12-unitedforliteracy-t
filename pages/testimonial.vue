@@ -13,7 +13,7 @@
                 </div>
                 <div class="mt-6 flex flex-col">
                     <label>Role: </label>
-                    <select required>
+                    <select required  v-model="role">
                     <option value="Volunteer" selected>Volunteer</option>
                     <option value="Learner">Learner</option>
                     <option value="Parent">Parent</option>
@@ -27,17 +27,17 @@
 
                 <div class="mt-6 flex flex-col">
                     <label for="other-role">If Other, please specify role:  </label>
-                    <input id="other-role" type="text">
+                    <input id="other-role" type="text" v-model="otherRole">
                 </div>
                 
                 <div class="mt-6 flex flex-col">
-                    <label for="testimonial-date">Date recorded:  </label>
-                    <input id="testimonial-date" type="date" required>
+                    <label for="testimonial_date">Date recorded:  </label>
+                    <input id="testimonial_date" type="date" required v-model="testimonial_date">
                 </div>
                 
                 <div class="mt-6 flex flex-col">
-                    <label>Topics:  </label>
-                    <select required>
+                    <label >Topics:  </label>
+                    <select required v-model="topic">
                     <option value="none"></option>
                     <option value="Participant/Learner">Participant/Learner</option>
                     <option value="Parent Impact">Parent Impact</option>
@@ -50,16 +50,38 @@
                 </div>
                 
                 <div class="mt-6 mb-4">
-                    <textarea id="testimonial-story" placeholder="Write your testimonial here" rows="4" class="w-full p-2"></textarea>
+                    <textarea id="testimonial-story" placeholder="Write your testimonial here" rows="4" class="w-full p-2" v-model="story"></textarea>
                 </div>
                 
                 <!-- <FCButton text="Submit"/> -->
-                <button>Submit</button>
+                <button @click="submit">Submit</button>
 
             </form>
         </div>
     </div>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      testimonial_date: '',
+      role: '',
+      otherRole: '',
+      topics: '',
+      story: ''
+    };
+  },
+  methods: {
+    submit() {
+        
+    }
+  }
+
+};
+
+</script>
 
 <style scoped>
 

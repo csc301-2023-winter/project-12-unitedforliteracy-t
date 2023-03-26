@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup="">
 definePageMeta({
   title: 'Track Hours',
   showBack: true
@@ -6,13 +6,19 @@ definePageMeta({
 
 const client = useClient()
 
-  // get a list of volunteer record IDs for the user with contactID
-  const rec = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")}))
-  const records: String[] = rec.record
-  if (!rec.total_hours){
-    rec.total_hours = 0
-  } 
-
+let rec: { 
+  userId: string; 
+  record: never[]; 
+  total_hours?: undefined; } | 
+  { userId: string; 
+    total_hours: number; 
+    record: string[] }
+  
+  rec = {
+    userId: "",
+    total_hours: 0,
+    record: []
+  }
   const recordHoursList: {  
     program: any;
     hours: any;
@@ -20,6 +26,22 @@ const client = useClient()
     recordedDate: any;
     notes: string
   }[] = []
+
+  const eventsList: {
+    id: any,
+    name: any
+  }[] = []
+  
+  if (typeof window !== "undefined"){
+
+  // get a list of volunteer record IDs for the user with contactID
+  rec = (await client.query('VolunteerHours', {userId: window.localStorage.getItem("userId")}))
+  const records: String[] = rec.record
+  if (!rec.total_hours){
+    rec.total_hours = 0
+  } 
+
+  
 
   // for each volunteer record id, find the record details & add to the recordHourList
   for (let i=0; i<records.length; i++){
@@ -33,6 +55,22 @@ const client = useClient()
     }
     recordHoursList.push(recordinfo)
   }
+}
+
+  // const eventIds: string[] = (await client.query("userEvents", {userId: window.localStorage.getItem("userId")})).events
+
+  // for (let i=0; i<eventIds.length; i++){
+  //   const eventDetail = await client.query("eventDetails", {eventId: eventIds[i]})
+  //   if (eventDetail){
+  //     const event = {
+  //     id: eventDetail.programId,
+  //     name: eventDetail.name
+  //   }
+  //   eventsList.push(event)
+  //   }
+    
+  // }
+
 </script>
 
 <template>
@@ -45,10 +83,10 @@ const client = useClient()
                 <div class="total-header flex flex-row px-5 py-5 justify-between">
                   <div class="text-[30px] font-bold text-[#00565a]">Total</div>
                   <button class="flex flex-col items-center" @click="showModal = true">Achievements
-                    <img v-if="rec.total_hours && rec.total_hours >= 1  && rec.total_hours < 50" src="../assets/achievement-icons/medal.png" class="w-16">
-                    <img v-else-if="rec.total_hours && rec.total_hours < 250 " src="../assets/achievement-icons/trophy.png" >
-                    <img v-else-if="rec.total_hours && rec.total_hours < 1000 " src="../assets/achievement-icons/star.png" >
-                    <img v-else-if="rec.total_hours && rec.total_hours >= 1000" src="../assets/achievement-icons/wreath.png" >
+                    <img v-if="rec.total_hours && rec.total_hours >= 1  && rec.total_hours < 50" src="../assets/achievement-icons/medal.png" class="w-12">
+                    <img v-else-if="rec.total_hours && rec.total_hours < 250 " src="../assets/achievement-icons/trophy.png" class="w-12">
+                    <img v-else-if="rec.total_hours && rec.total_hours < 1000 " src="../assets/achievement-icons/star.png" class="w-12">
+                    <img v-else-if="rec.total_hours && rec.total_hours >= 1000" src="../assets/achievement-icons/wreath.png" class="w-12">
                   </button>
                   <Modal v-show="showModal" :vhours=rec.total_hours @close-modal="showModal = false" />
                 </div>
@@ -69,67 +107,58 @@ const client = useClient()
                   <div class="text-xl font-bold text-[#00734F]">
                     Add Volunteer Hours
                   </div>
-                  <form class="signup-form" action="#" method="post">
+                  <form class="signup-form" action="" method="">
                     <div class="form-row">
-                      <label class="form-label" for="event-name"
-                        >Event name:</label
+                      <label class="form-label" for="program"
+                        >Program name:</label
                       >
-                      <input
-                        type="text"
-                        required
-                        name="event-name"
-                        placeholder="Summer Camp"
-                      />
+                      <input type="text" required name="program" placeholder="summer camp" v-model="program">
+                      <!-- <select  v-model="program" class="border w-100">
+                        <option v-for="e in eventsList" :key="e.id" :value="e.id">{{ e.name }}</option>
+                      </select> -->
                     </div>
                     <div class="form-row">
-                      <label class="form-label" for="date">Date</label>
-                      <input type="date" required name="date" />
+                      <label class="form-label" for="date_entered">Date Attended (or start date if multiple days attended)</label>
+                      <input type="date" required name="date_entered" v-model="date_entered"/>
                     </div>
                     <div class="form-row">
-                      <label class="form-label" for="time">Time</label>
+                      <label class="form-label" for="days_attended">Days Attended:</label>
                       <input
-                        type="time"
+                        type="number"
                         required
-                        name="time"
-                        placeholder="Time"
+                        name="days_attended"
+                        placeholder="1"
+                        v-model="days_attended"
                       />
                     </div>
 
                     <div class="form-row">
-                      <label class="form-label" for="hours-num"
+                      <label class="form-label" for="hours_num"
                         >Number of hours</label
                       >
                       <input
                         type="number"
                         required
-                        name="hours-num"
+                        name="hours_num"
                         placeholder="10"
+                        v-model="hours_num"
                       />
                     </div>
                     <div class="form-row">
-                      <label class="form-label" for="location">Location:</label>
-                      <input
-                        type="text"
-                        required
-                        name="location"
-                        placeholder="40 St George"
-                      />
-                    </div>
-                    <div class="form-row">
-                      <label class="form-label" for="location"
-                        >Supervisor name</label
+                      <label class="form-label" for="notes"
+                        >Notes (if any)</label
                       >
                       <input
                         type="text"
-                        required
-                        name="sup-name"
-                        placeholder="John Doe"
+                        name="notes"
+                        v-model="notes"
                       />
                     </div>
+                   
 
                     <div class="flex flex-col justify-center items-center mt-5">
                       <div class="button-input">
-                        <button type="submit" class="btn">Add</button>
+                        <button class="btn" @click="submit">Add</button>
                       </div>
                     </div>
                   </form>
@@ -168,23 +197,41 @@ const client = useClient()
 
 <script lang="ts">
 import Modal from '~/components/modal.vue'
+
 export default {
   components: { Modal },
   data() {
     return {
       showModal: false,
-      vhours: 0
+      vhours: 0,
+      days_attended: 0, 
+      date_entered: '',
+      hours_num: 0, 
+      notes: '',
+      program: '',
+      user:''
+
     }
 
   },
+  methods: {
+    async submit() {
+      const client = useClient()
+      await client.mutation('createRecord', {
+        userID: '003Au000005D9H7IAK',
+        programID: 'a26Au00000008tdIAA',
+        hours: this.hours_num,
+        days: this.days_attended,
+        date: (new Date(this.date_entered)).toISOString(),
+        notes: this.notes
+      });
+    }
+  }
 }
 </script>
 
 <style scoped>
 
-.achievement-img{
-  width: 80px;
-}
       .middle-section-container {
         display: flex;
         flex-direction: column;
