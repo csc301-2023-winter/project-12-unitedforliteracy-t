@@ -17,8 +17,6 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
     const { userID, programID, role, otherRole, topics, story, date } = input
 
     const fields = {
-      // CreatedbyId: userID,
-      // OwnerId: userID,
       Program_Offering__c: programID,
       Topics__c: topics,
       Source__c: role,
@@ -27,13 +25,14 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
       Date_Recorded__c: date
     }
     const Resp = await api.createRecord('Testimonial__c', fields, auth)
-    const response = await Resp.json()
 
-    console.log("response",response.status)
-    if (!response || response.status !== 201 || response.status !== 200) {
-      console.log('Failed to create testimonial')
+    // const response = await Resp.json()
+
+    // comment out this if statement cuz the success response.status is undefined
+    // if (!response || response.status !== 201 || response.status !== 200) {
+    //   console.log('Failed to create testimonial')
       
-    }
+    // }
   },
 })
 

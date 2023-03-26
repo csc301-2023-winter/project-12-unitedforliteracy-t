@@ -62,29 +62,29 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
       testimonial_date: '',
       role: '',
       otherRole: '',
-      topics: '',
+      topic: '',
       story: ''
     };
   },
   methods: {
-    async submit() {
-      const client = useClient()
-      await client.mutation('createTestimonial', {
-        userID: '003Au000005D9H7IAK',
-        programID: 'a26Au00000008tdIAA',
-        role: this.role,
-        otherRole: this.otherRole,
-        topics: this.topics,
-        story: this.story,
-        date: (new Date(this.testimonial_date)).toISOString()
-      });
+    async submit(){
+        // date, program and topic are required fields!
+        const client = useClient()
+        await client.mutation('createTestimonial', {
+            userID: '003Au000005D9H7IAK',
+            programID: 'a26Au00000008tdIAA',
+            role: this.role,
+            otherRole: this.otherRole,
+            topics: this.topic,
+            story: this.story,
+            date: (new Date(this.testimonial_date)).toISOString()
+        });
     }
   }
 
