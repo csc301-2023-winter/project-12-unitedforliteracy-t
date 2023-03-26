@@ -52,6 +52,57 @@ export class SFAPI {
 
     return response as Response
   }
+
+  async createRecord(
+    objectName: string,
+    fields: Record<string, any>,
+    authInstance: SFAuth
+  ): Promise<Response> {
+    if (!authInstance.token) {
+      await authInstance.getBearerToken(this)
+    }
+  
+    const path = `${this.baseUrl}/services/data/${this.version}/sobjects/${objectName}`
+  
+    const opts = {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${authInstance.token}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fields)
+    }
+  
+    let response = await fetch(path, opts)
+    let errorAttempts = 0
+    while (
+      response &&
+      (response as Response).status !== 201 &&
+      errorAttempts < 2
+    ) {
+      errorAttempts += 1
+      const responseJson = await (response as Response).json()
+  
+      // refresh API token if not valid
+      if (
+        responseJson.errorCode &&
+        responseJson.errorCode === 'INVALID_SESSION_ID'
+      ) {
+        await authInstance.getBearerToken(this)
+        opts.headers.Authorization = `Bearer ${authInstance.token}`
+        response = await fetch(path, opts)
+        continue
+      }
+      // other error types, log to console
+      console.log("errors --------------------")
+      console.error((response as Response).status)
+      errorAttempts = 3
+    }
+    console.log("response in sf", response.status, response)
+    return response as Response
+  }
+  
 }
 
 export class SFAuth {
