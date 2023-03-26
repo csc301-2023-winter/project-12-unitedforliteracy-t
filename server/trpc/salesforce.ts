@@ -75,7 +75,7 @@ export class SFAPI {
     }
   
     let response = await fetch(path, opts)
-    console.log("ther are errors!! -----", response.status)
+    console.log("response status-----", response.status)
     let errorAttempts = 0
     while (
       response &&
