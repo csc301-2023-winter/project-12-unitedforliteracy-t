@@ -74,8 +74,17 @@ export default {
     };
   },
   methods: {
-    submit() {
-        
+    async submit() {
+      const client = useClient()
+      await client.mutation('createTestimonial', {
+        userID: '003Au000005D9H7IAK',
+        programID: 'a26Au00000008tdIAA',
+        role: this.role,
+        otherRole: this.otherRole,
+        topics: this.topics,
+        story: this.story,
+        date: (new Date(this.testimonial_date)).toISOString()
+      });
     }
   }
 

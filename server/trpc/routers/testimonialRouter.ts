@@ -14,11 +14,11 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
     date: z.string()
   }),
   async resolve({ input }) {
-    const { userID, programID, role, otherRole,topics, story, date } = input
+    const { userID, programID, role, otherRole, topics, story, date } = input
 
     const fields = {
-      CreatedbyId: userID,
-      OwnerId: userID,
+      // CreatedbyId: userID,
+      // OwnerId: userID,
       Program_Offering__c: programID,
       Topics__c: topics,
       Source__c: role,
@@ -31,7 +31,7 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
 
     console.log("response",response.status)
     if (!response || response.status !== 201 || response.status !== 200) {
-      console.log('Failed to create record')
+      console.log('Failed to create testimonial')
       
     }
   },
