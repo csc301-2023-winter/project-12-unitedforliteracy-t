@@ -43,11 +43,11 @@ const submit = async () => {
       // t2 start
 
 
-      if (hours_num.value <0) {
-          alert("Number of hours must be postive")
+      if (hours_num.value <=0) {
+          alert("INVALID INPUT: Number of hours must be greater than 0")
       }
-      else if (days_attended.value <0) {
-          alert("Days attended must be postive")
+      else if (days_attended.value <=0) {
+          alert("INVALID INPUT: Days attended must be greater than 0")
       }
       else{
         const client = useClient();
