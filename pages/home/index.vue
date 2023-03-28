@@ -71,14 +71,14 @@ if (events.length === 0) {
           :text="eventContent"
           textcolor="black"
           color="var(--lime-green)"
-          link="/programs"
+          link="/resources"
         />
         <FCArrowCard
           title="Assigned Modules"
           :text="eventContent"
           textcolor="black"
           color="var(--lime-green)"
-          link="/programs"
+          link="/resources"
         />
         </div>
       </div>
