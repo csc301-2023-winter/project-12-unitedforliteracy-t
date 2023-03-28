@@ -10,6 +10,16 @@ const days_attended = ref(0);
 const date_entered = ref(new Date().toISOString().slice(0, 10)); // format as YYYY-MM-DD
 const notes = ref('');
 
+if (hours_num.value <0) {
+    alert("Number of hours must be postive")
+}
+if (days_attended.value <0) {
+    alert("Days attended must be postive")
+}
+
+
+
+let submitSuccess = false //initially set submit successful to false
 const submit = async () => {
       const client = useClient();
       if (typeof window !== "undefined"){
@@ -21,10 +31,15 @@ const submit = async () => {
         days: days_attended.value,
         date: date_entered.value,
         notes: notes.value,
-})
+        })
+
 
       }
       
+      // let response = Response
+      // console.log("VUE res: ", response.status)
+      alert("Volunteer Hours has been added successfully!");
+      submitSuccess = true
 
 }
 
@@ -131,7 +146,7 @@ let rec: {
                   <div class="text-xl font-bold text-[#00734F]">
                     Add Volunteer Hours
                   </div>
-                  <form class="signup-form" action="" method="">
+                  <form class="signup-form" action="" method="" v-if="!submitSuccess">
                     <div class="form-row">
                       <label class="form-label" for="program"
                         >Program name:</label
@@ -186,6 +201,9 @@ let rec: {
                       </div>
                     </div>
                   </form>
+                  <!-- <div v-if="submitSuccess"> 
+                      <div> SUCCESS</div>
+                  </div> -->
                 </div>
               </div>
             </div>

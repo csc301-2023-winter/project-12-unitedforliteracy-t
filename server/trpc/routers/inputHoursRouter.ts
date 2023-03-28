@@ -25,7 +25,7 @@ export const createRecordRouter = createRouter().mutation('createRecord', {
     const Resp = await api.createRecord('ProgPar__c', fields, auth)
     const response = await Resp.json()
 
-    console.log("response",response.status)
+    console.log("response: ",response.status)
     if (!response || response.status !== 201 || response.status !== 200) {
       console.log('Failed to create record')
       
