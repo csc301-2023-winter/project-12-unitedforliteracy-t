@@ -1,4 +1,5 @@
 <script lang="ts" setup="">
+import { resolveHTTPResponse } from '@trpc/server';
 import { ref } from 'vue';
 definePageMeta({
   title: 'Track Hours',
@@ -10,36 +11,69 @@ const days_attended = ref(0);
 const date_entered = ref(new Date().toISOString().slice(0, 10)); // format as YYYY-MM-DD
 const notes = ref('');
 
-if (hours_num.value <0) {
-    alert("Number of hours must be postive")
-}
-if (days_attended.value <0) {
-    alert("Days attended must be postive")
-}
+
 
 
 
 let submitSuccess = false //initially set submit successful to false
 const submit = async () => {
-      const client = useClient();
-      if (typeof window !== "undefined"){
-        let user = window.localStorage.getItem('userId')
-        await client.mutation('createRecord', {
-        userID: user,
-        programID: 'a26Au00000008tdIAA',
-        hours: hours_num.value,
-        days: days_attended.value,
-        date: date_entered.value,
-        notes: notes.value,
-        })
+
+    // const client = useClient();
+    //       if (typeof window !== "undefined"){
+    //         let user = window.localStorage.getItem('userId')
+    //         const mut = await client.mutation('createRecord', {
+    //         userID: user,
+    //         programID: 'a26Au00000008tdIAA',
+    //         hours: hours_num.value,
+    //         days: days_attended.value,
+    //         date: date_entered.value,
+    //         notes: notes.value,
+    //         })
+    //         console.log("mut status: ", mut)
+    //         if (mut === true){
+    //           alert("Volunteer Hours has been added successfully!");
+    //         }
+    //         else{
+    //           alert("Failed to add hours");
+
+    //         }
+    //       }
+      
+
+      // t2 start
 
 
+      if (hours_num.value <0) {
+          alert("Number of hours must be postive")
+      }
+      else if (days_attended.value <0) {
+          alert("Days attended must be postive")
+      }
+      else{
+        const client = useClient();
+        if (typeof window !== "undefined"){
+          alert("Volunteer Hours Added")
+          let user = window.localStorage.getItem('userId')
+          const mut = await client.mutation('createRecord', {
+          userID: user,
+          programID: 'a26Au00000008tdIAA',
+          hours: hours_num.value,
+          days: days_attended.value,
+          date: date_entered.value,
+          notes: notes.value,
+          })
+          // console.log(mut)
+          if (mut === true || mut === "true"){
+            alert("Volunteer Hours has been added successfully!");
+          }
+          else{
+            alert("Failed to add hours");
+          }
+        }
       }
       
-      // let response = Response
-      // console.log("VUE res: ", response.status)
-      alert("Volunteer Hours has been added successfully!");
-      submitSuccess = true
+      //t2 end
+      
 
 }
 
@@ -146,7 +180,7 @@ let rec: {
                   <div class="text-xl font-bold text-[#00734F]">
                     Add Volunteer Hours
                   </div>
-                  <form class="signup-form" action="" method="" v-if="!submitSuccess">
+                  <form class="signup-form" action="" method="">
                     <div class="form-row">
                       <label class="form-label" for="program"
                         >Program name:</label
