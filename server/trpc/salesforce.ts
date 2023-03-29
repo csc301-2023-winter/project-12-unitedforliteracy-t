@@ -100,7 +100,7 @@ export class SFAPI {
       errorAttempts = 3
     }
     console.log("response in sf", response.status)
-    //form submission successful msg
+    // form submission successful msg
     if (response.status === 201) {
       console.log("The form has been submitted successfully")
       // alert('The form has been submitted successfully');

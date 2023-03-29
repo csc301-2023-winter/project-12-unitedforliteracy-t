@@ -5,7 +5,6 @@ import { createRouter, TRPCError } from '../createRouter'
 
 export const createTestimonialRouter = createRouter().mutation('createTestimonial', {
   input: z.object({
-    userID: z.string(),
     programID: z.string(),
     role: z.string(),
     otherRole: z.string(),
@@ -14,8 +13,9 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
     date: z.string()
   }),
   async resolve({ input }) {
-    const { userID, programID, role, otherRole, topics, story, date } = input
-
+    const { programID, role, otherRole, topics, story, date } = input
+    
+    // date, program and topic are required fields!
     const fields = {
       Program_Offering__c: programID,
       Topics__c: topics,
@@ -25,8 +25,10 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
       Date_Recorded__c: date
     }
     const Resp = await api.createRecord('Testimonial__c', fields, auth)
+    
+    const response = await Resp.json()
 
-    // const response = await Resp.json()
+    return response.success
 
     // comment out this if statement cuz the success response.status is undefined
     // if (!response || response.status !== 201 || response.status !== 200) {

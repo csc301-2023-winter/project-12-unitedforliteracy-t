@@ -50,7 +50,7 @@
                 </div>
                 
                 <div class="mt-6 mb-4">
-                    <textarea id="testimonial-story" placeholder="Write your testimonial here" rows="4" class="w-full p-2" v-model="story"></textarea>
+                    <textarea id="testimonial-story" placeholder="Write your testimonial here" rows="4" class="w-full p-2" v-model="story" required></textarea>
                 </div>
                 
                 <!-- <FCButton text="Submit"/> -->
@@ -75,16 +75,25 @@ export default {
   methods: {
     async submit(){
         // date, program and topic are required fields!
-        const client = useClient()
-        await client.mutation('createTestimonial', {
-            userID: '003Au000005D9H7IAK',
-            programID: 'a26Au00000008tdIAA',
-            role: this.role,
-            otherRole: this.otherRole,
-            topics: this.topic,
-            story: this.story,
-            date: (new Date(this.testimonial_date)).toISOString()
-        });
+        if (this.role === '' || this.topic === '' || this.story === ''){
+            alert('Please fill out all required fields!')
+        }
+        else{
+            setTimeout(() => {
+                alert('Testimonial has been successfully submitted!')
+            }, 5);
+            console.log("topic===",this.topic, this.date)
+            const client = useClient()
+            await client.mutation('createTestimonial', {
+                programID: 'a26Au00000008tdIAA',
+                role: this.role,
+                otherRole: this.otherRole,
+                topics: this.topic,
+                story: this.story,
+                date: (new Date(this.testimonial_date)).toISOString()
+            });
+        }
+        
     }
   }
 
