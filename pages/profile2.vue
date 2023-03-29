@@ -65,7 +65,7 @@ if (typeof window !== "undefined"){
                         <p>{{ number }}</p>
                     </div>                     
                 </div>
-                <button id="edit">Edit Profile</button>
+                <!--<button id="edit">Edit Profile</button>-->
             </div>
         </div>
     </div>
@@ -82,12 +82,14 @@ if (typeof window !== "undefined"){
         align-items: center;
     }
 
+    /*
     #edit{
         border-radius: 5px;
         padding: 6px 12px;
         background-color: rgb(4, 187, 20);
         margin-top: 20px;
     }
+    */
 
     #portrait{
         width: 290px;
