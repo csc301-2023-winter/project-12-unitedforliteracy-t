@@ -185,7 +185,11 @@ let rec: {
                       <label class="form-label" for="program"
                         >Program name:</label
                       >
-                      <input type="text" required name="program" placeholder="summer camp" v-model="program">
+                      <!-- <input type="text" required name="program" placeholder="summer camp" v-model="program"> -->
+                      <select v-model="program" required class="form-label border border-opacity-90 rounded h-8">
+                    <option value="none"></option>
+                    <option value="Literacy and Basic skills">Literacy and Basic skills</option>
+                    </select>
                       <!-- <select  v-model="program" class="border w-100">
                         <option v-for="e in eventsList" :key="e.id" :value="e.id">{{ e.name }}</option>
                       </select> -->
