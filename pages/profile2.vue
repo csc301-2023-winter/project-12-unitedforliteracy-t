@@ -5,7 +5,7 @@ definePageMeta({
 })
 
 const client = useClient()
-let contact, name, hours, email, type, user_id, number
+let contact, name, hours, email, type, user_id, number, date_of_birth, alt_number, gender
 
 if (typeof window !== "undefined"){
   contact = await client.query('user', {
@@ -17,6 +17,9 @@ if (typeof window !== "undefined"){
   type = contact.userType
   user_id = contact.userId
   number = contact.number
+  alt_number = contact.alt_number
+  date_of_birth = contact.date_birth
+  gender = contact.gender
 
 
 }
@@ -43,6 +46,18 @@ if (typeof window !== "undefined"){
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
+                        <b>Date of Birth:</b>
+                        <p>{{ date_of_birth }}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">                      
+                        <b>Gender:</b>
+                        <p>{{ gender }}</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">                      
                         <b>User ID:</b>
                         <p>{{ user_id }}</p>
                     </div>
@@ -61,8 +76,14 @@ if (typeof window !== "undefined"){
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-row">                      
-                        <b>Phone Number:</b>
+                        <b>Primary Phone Number:</b>
                         <p>{{ number }}</p>
+                    </div>                     
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">                      
+                        <b>Alternative Phone Number:</b>
+                        <p>{{ alt_number }}</p>
                     </div>                     
                 </div>
                 <!--<button id="edit">Edit Profile</button>-->

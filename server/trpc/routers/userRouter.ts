@@ -11,7 +11,7 @@ export const userRouter = createRouter().query('user', {
   }),
 
   async resolve({ input }) {
-    const contactQuery = `SELECT Id, Name, Email, RecordTypeId, Volunteer_Hours__c, Primary_Telephone_Number__c FROM Contact WHERE Id='${input.userId}'`
+    const contactQuery = `SELECT Id, Name, Email, RecordTypeId, Volunteer_Hours__c, Primary_Telephone_Number__c, Date_of_Birth__c, Alternate_Phone_Number__c, Gender__c FROM Contact WHERE Id='${input.userId}'`
     const contactResp = await api.query(contactQuery, auth)
     const contactData = await contactResp.json()
     if (!contactResp || contactResp.status !== 200) {
@@ -42,9 +42,12 @@ export const userRouter = createRouter().query('user', {
     return {
       userId: contact.Id,
       name: contact.Name,
+      gender: contact.Gender__c,
       email: contact.Email,
       hours: contact.Volunteer_Hours__c,
       number: contact.Primary_Telephone_Number__c,
+      alt_number: contact.Alternate_Phone_Number__c,
+      date_birth: contact.Date_of_Birth__c,
       userType: recordData.records[0].Name
     }
   }
