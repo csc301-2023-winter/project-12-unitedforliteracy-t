@@ -82,7 +82,6 @@ export default {
             setTimeout(() => {
                 alert('Testimonial has been successfully submitted!')
             }, 5);
-            console.log("topic===",this.topic, this.date)
             const client = useClient()
             await client.mutation('createTestimonial', {
                 programID: 'a26Au00000008tdIAA',

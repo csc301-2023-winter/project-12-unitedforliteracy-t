@@ -27,10 +27,6 @@ export const volunteerHoursRouter = createRouter().query('VolunteerHours', {
         userId: input.userId,
         record: []
       }
-      // throw new TRPCError({
-      //   code: 'NOT_FOUND',
-      //   message: 'Given volunteer user not found by Id = ' + input.userId
-      // })
     }
     else{
         const story = data.records

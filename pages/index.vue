@@ -9,7 +9,6 @@ import { useRouter } from 'vue-router'
 
 interface User {
   userId: string
-  contactId: string
 }
 
 // using hard-coded user values for now instead of fetching from database
@@ -21,25 +20,21 @@ export default defineComponent({
   setup() {
     const router = useRouter()
 
+    // all users have been set to test volunteer
+
     const user1: User = { // Admin
-      userId: '003Au00000AOCYgIAP',
-      contactId: '005Au000003MwDJIA0'
+      userId: '003Au000005D9H7IAK',
     }
     const user2: User = { 
-      // userId: '005Au000003MwLNIA0', // Volunteer
-      // contactId: '003Au00000AXfg9IAD'
       userId: '003Au000005D9H7IAK', // test volunteer
-      contactId: '005Au0000028aTNIAY'
     }
     const user3: User = {
-      userId: '003Au00000AZDxVIAX', // Staff
-      contactId: '005Au000003MwEvIAK'
+      userId: '003Au000005D9H7IAK', // Staff
     }
 
 // will send userId and contactId to the homepage
     function loginAsUser(user: User) {
       window.localStorage.setItem("userId", user.userId)
-      window.localStorage.setItem("contactId", user.contactId)
     }
 
     return {

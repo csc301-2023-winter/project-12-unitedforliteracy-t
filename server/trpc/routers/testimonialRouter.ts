@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { auth, api } from '../salesforce'
-import { createRouter, TRPCError } from '../createRouter'
+import { createRouter } from '../createRouter'
 
 
 export const createTestimonialRouter = createRouter().mutation('createTestimonial', {
@@ -30,11 +30,6 @@ export const createTestimonialRouter = createRouter().mutation('createTestimonia
 
     return response.success
 
-    // comment out this if statement cuz the success response.status is undefined
-    // if (!response || response.status !== 201 || response.status !== 200) {
-    //   console.log('Failed to create testimonial')
-      
-    // }
   },
 })
 

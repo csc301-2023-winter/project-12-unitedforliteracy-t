@@ -11,37 +11,7 @@ const days_attended = ref(0);
 const date_entered = ref(new Date().toISOString().slice(0, 10)); // format as YYYY-MM-DD
 const notes = ref('');
 
-
-
-
-
-let submitSuccess = false //initially set submit successful to false
 const submit = async () => {
-
-    // const client = useClient();
-    //       if (typeof window !== "undefined"){
-    //         let user = window.localStorage.getItem('userId')
-    //         const mut = await client.mutation('createRecord', {
-    //         userID: user,
-    //         programID: 'a26Au00000008tdIAA',
-    //         hours: hours_num.value,
-    //         days: days_attended.value,
-    //         date: date_entered.value,
-    //         notes: notes.value,
-    //         })
-    //         console.log("mut status: ", mut)
-    //         if (mut === true){
-    //           alert("Volunteer Hours has been added successfully!");
-    //         }
-    //         else{
-    //           alert("Failed to add hours");
-
-    //         }
-    //       }
-      
-
-      // t2 start
-
 
       if (hours_num.value <=0) {
           alert("INVALID INPUT: Number of hours must be greater than 0")
@@ -62,7 +32,6 @@ const submit = async () => {
           date: date_entered.value,
           notes: notes.value,
           })
-          // console.log(mut)
           if (mut === true || mut === "true"){
             alert("Volunteer Hours has been added successfully!");
           }
@@ -70,10 +39,7 @@ const submit = async () => {
             alert("Failed to add hours");
           }
         }
-      }
-      
-      //t2 end
-      
+      }     
 
 }
 
@@ -100,10 +66,10 @@ let rec: {
     notes: string
   }[] = []
 
-  const eventsList: {
-    id: any,
-    name: any
-  }[] = []
+  // const eventsList: {
+  //   id: any,
+  //   name: any
+  // }[] = []
   
   if (typeof window !== "undefined"){
 
@@ -113,8 +79,6 @@ let rec: {
   if (!rec.total_hours){
     rec.total_hours = 0
   } 
-
-  
 
   // for each volunteer record id, find the record details & add to the recordHourList
   for (let i=0; i<records.length; i++){
@@ -130,6 +94,8 @@ let rec: {
   }
 }
 
+// fetching the events program for the form porgram selection
+
   // const eventIds: string[] = (await client.query("userEvents", {userId: window.localStorage.getItem("userId")})).events
 
   // for (let i=0; i<eventIds.length; i++){
@@ -141,7 +107,6 @@ let rec: {
   //   }
   //   eventsList.push(event)
   //   }
-    
   // }
 
 </script>
@@ -185,8 +150,8 @@ let rec: {
                       <label class="form-label" for="program"
                         >Program name:</label
                       >
-                      <!-- <input type="text" required name="program" placeholder="summer camp" v-model="program"> -->
-                      <select v-model="program" required class="form-label border border-opacity-90 rounded h-8">
+                      <!-- <input type="text" required name="program" placeholder="summer camp"> -->
+                      <select required class="form-label border border-opacity-90 rounded h-8">
                     <option value="none"></option>
                     <option value="Literacy and Basic skills">Literacy and Basic skills</option>
                     </select>
@@ -239,9 +204,6 @@ let rec: {
                       </div>
                     </div>
                   </form>
-                  <!-- <div v-if="submitSuccess"> 
-                      <div> SUCCESS</div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -475,11 +437,6 @@ export default {
       #hours-log-table tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-
-      /* #hours-log-table tr:hover {
-        background-color: #ddd;
-        cursor: pointer;
-      } */
 
       #table-head {
         color: #00734f !important;
